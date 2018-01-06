@@ -40,6 +40,16 @@
 	cursor: pointer;
 }
 
+.trialsImgs {
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+	border: 1px solid #000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
 #break {
 	text-align: center;
 }
