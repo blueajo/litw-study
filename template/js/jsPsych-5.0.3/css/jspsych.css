@@ -83,6 +83,11 @@ input[type="text"] {
   border-color: #aaa;
 }
 
+.jspsych-btn:disabled {
+  background-color: #fff;
+  border-color: #fff;
+}
+
 /* Container holding jsPsych content */
 
 .jspsych-display-element {
