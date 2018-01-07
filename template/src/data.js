@@ -12,6 +12,9 @@
  * the code, contact us at info@labinthewild.org
  *************************************************************/
 
+require("../js/jsPsych-5.0.3/plugins/jspsych-animation");
+require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
+
 module.exports = {
    "preTrial": {
       "header": "Nice job!",
@@ -28,7 +31,7 @@ module.exports = {
       "header": "You're doing great! Take a breather."
    },
    "practiceRating": [
-      {
+      /*{
          "type": "single-stim",
          "stimulus": "<img src='img/stim-img/low1.png' class='trialsImgs'/>",
          "is_html": true,
@@ -36,6 +39,16 @@ module.exports = {
          "timing_stim": 500,
          "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
          "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+      }*/
+      {
+        "type": "animation",
+        "frame_time": "500",
+        "stimuli": ["img/stim-img/low1.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","Very appealing"]
       }
    ],
    "trialComplexity": [
