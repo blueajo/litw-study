@@ -49,114 +49,186 @@ module.exports = {
    ],
    "trialComplexity": [
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/low2.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/low2.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/medium1.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/medium2.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/medium1.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/high1.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/high2.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/medium2.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/high3.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's appeal on a scale from 1 - 9?</span>"
-      }
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+      {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/high1.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+      {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/high2.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+      {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/high3.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
    ],
    "trialUsability": [
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/low3.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/low3.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/low4.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/medium3.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/low4.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/medium4.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+            {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/medium3.png"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/high4.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
       },
       {
-         "type": "single-stim",
-         "stimulus": "<img src='img/stim-img/high5.png' class='trialsImgs'/>",
-         "is_html": true,
-         "choices": [49, 50, 51, 52, 53, 54, 55, 56, 57], // the numbers 1 - 2
-         "timing_stim": 500,
-         "prompt": "How would you rate this website's complexity on a scale from 1 - 9? [Press a key from 1-9 on keyboard]</span>",
-         "promptWithTouch": "How would you rate this website's usability on a scale from 1 - 9?</span>"
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/medium4.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+      {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/high4.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+      },
+      {
+        "type": "animation",
+        "frame_time": 500,
+        "stimuli": ["img/stim-img/high5.png"]
+      },
+      {
+        "type": "button-response",
+        "prompt": "<p>Please rate the website you have just seen based on visual appeal<p>",
+        "choices": ["Very unappealing","","","","","","","","","","Very appealing"],
+        "button_html":["<button class='jspsych-btn' disabled>Very unappealing</button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
+        "<button class='jspsych-btn' disabled>Very appealing</button>"]
       }
    ],
    "practiceTask": [
