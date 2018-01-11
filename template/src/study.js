@@ -113,8 +113,8 @@ module.exports = (function() {
             func: function() {
                $("#progress-header").html(progressTemplate({
                   msg: C.progressMsg,
-                  progress: ++params.currentProgress,
-                  total: params.practiceStimsA.length
+                  progress: Math.ceil((++params.currentProgress)/2),
+                  total: params.practiceStimsA.length/2
                }))
                .show();
 
@@ -142,7 +142,7 @@ module.exports = (function() {
             $("#progress-header").hide();
             LITW.utils.showSlide("break");
          }
-      })
+      });
       timeline.push({
          type: "display-info",
          name: "preTrialBreak",
@@ -160,8 +160,8 @@ module.exports = (function() {
             func: function() {
                $("#progress-header").html(progressTemplate({
                   msg: C.progressMsg,
-                  progress: ++params.currentProgress,
-                  total: params.stimC.length * 2
+                  progress: Math.ceil((++params.currentProgress)/2),
+                  total: params.stimC.length/2
                }))
                .show();
 
@@ -183,15 +183,23 @@ module.exports = (function() {
 
       // INSTRUCTIONS PAGE
       timeline.push({
+         type: "call-function",
+         func: function() {
+            params.currentProgress = 0;
+            $("#progress-header").hide();
+            LITW.utils.showSlide("instructions");
+         }
+      });
+      timeline.push({
          type: "display-slide",
-            display_element: $("#instructions2"),
-         name: "instructions2",
+            display_element: $("#instructions"),
+         name: "instructions",
             template: instructions2Template({withTouch: window.litwWithTouch})
       });
 
       // 6. TRIAL STIMS, PHASE 2
       // re-shuffle stim order
-      params.stimU = LITW.utils.shuffleArrays(params.stimU);
+      // params.stimU = LITW.utils.shuffleArrays(params.stimU); // this way of shuffling doesn't work
       params.stimU.forEach(function(stim, index) {
 
          // record tracking information
@@ -200,8 +208,8 @@ module.exports = (function() {
             func: function() {
                $("#progress-header").html(progressTemplate({
                   msg: C.progressMsg,
-                  progress: ++params.currentProgress,
-                  total: params.stimU.length * 2
+                  progress: Math.ceil((++params.currentProgress)/2),
+                  total: params.stimU.length/2
                }))
                .show();
 
@@ -221,8 +229,16 @@ module.exports = (function() {
 
       // INSTRUCTIONS PAGE
       timeline.push({
+         type: "call-function",
+         func: function() {
+            params.currentProgress = 0;
+            $("#progress-header").hide();
+            LITW.utils.showSlide("instructions");
+         }
+      });
+      timeline.push({
          type: "display-slide",
-         display_element: $("#instructions3"),
+         display_element: $("#instructions"),
          name: "instructions3",
          template: instructions3Template({withTouch: window.litwWithTouch})
       });
@@ -236,8 +252,8 @@ module.exports = (function() {
                 func: function() {
                     $("#progress-header").html(progressTemplate({
                         msg: C.progressMsg,
-                        progress: ++params.currentProgress,
-                        total: params.practiceStimsB.length
+                        progress: Math.ceil((++params.currentProgress)/3),
+                        total: params.practiceStimsB.length/3
                     }))
                         .show();
 
@@ -263,7 +279,7 @@ module.exports = (function() {
               $("#progress-header").hide();
               LITW.utils.showSlide("break");
            }
-        })
+        });
         timeline.push({
            type: "display-info",
            name: "preTrialBreak",
@@ -282,8 +298,8 @@ module.exports = (function() {
                 func: function() {
                     $("#progress-header").html(progressTemplate({
                         msg: C.progressMsg,
-                        progress: ++params.currentProgress,
-                        total: params.stimT.length
+                        progress: Math.ceil((++params.currentProgress)/3),
+                        total: params.stimT.length/3
                     }))
                         .show();
 
