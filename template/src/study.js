@@ -227,6 +227,9 @@ module.exports = (function() {
          });
       });
 
+      /*PART 2:SEARCHING AND MEMORIZATION TASK STARTS HERE*/
+
+
       // INSTRUCTIONS PAGE
       timeline.push({
          type: "call-function",
