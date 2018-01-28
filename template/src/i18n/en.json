@@ -32,5 +32,5 @@
     "litw-instruct-body-2-p2": "However, this time, you will be asked to rate the websites on their usability instead of appeal.",
     "litw-instruct-body-pt2-p1": "You have reached the second half of the experiment.  This section has two parts.  In the first section, we will give you something to search for on a website and your job is to find it and click on this.  Try to do this task as fast as possible.",
     "litw-instruct-body-pt2-p2": "In the second part of the experiment, we will present different stimuli and we will have you select which of these stimuli appeared on the previous website.",
-    "litw-memorization-prmpt": "Click on the images that appeared on the previous website."
+    "litw-memorization-prompt": "Click on the images that appeared on the previous website."
 }
