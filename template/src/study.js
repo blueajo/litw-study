@@ -25,6 +25,24 @@ var instructions3Template = require("../templates/instructions3.html");
 var loadingTemplate = require("../templates/loading.html");
 var resultsTemplate = require("../templates/results.html");
 var progressTemplate = require("../templates/progress.html");
+
+// 12 Templates for part B (3 Trial + 3 Low + 3 high + 3 medium)
+var part2instructions1Template = require("../templates/part2instructions1.html");
+var part2memorization1Template = require("../templates/part2memorization1.html");
+var part2searching1Template = require("../templates/part2searching1.html");
+
+var part2instructions2Template = require("../templates/part2instructions2.html");
+var part2memorization2Template = require("../templates/part2memorization2.html");
+var part2searching2Template = require("../templates/part2searching2.html");
+
+var part2instructions3Template = require("../templates/part2instructions3.html");
+var part2memorization3Template = require("../templates/part2memorization3.html");
+var part2searching3Template = require("../templates/part2searching3.html");
+
+var part2instructionsTrialTemplate = require("../templates/part2instructionsTrial.html");
+var part2memorizationTrialTemplate = require("../templates/part2memorizationTrial.html");
+var part2searchingTrialTemplate = require("../templates/part2searchingTrial.html");
+
 var i18n = require("../js/i18n");
 require("./jspsych-display-info");
 require("./jspsych-display-slide");
@@ -246,8 +264,8 @@ module.exports = (function() {
          template: instructions3Template({withTouch: window.litwWithTouch})
       });
 
-      // Practice for part B
-        params.practiceStimsB.forEach(function(stim, index) {
+      // Practice for part B (for testing, comment out lines 268- 283)
+         params.practiceStimsB.forEach(function(stim, index) {
 
             // record tracking information
             timeline.push({
@@ -291,7 +309,7 @@ module.exports = (function() {
            display_element: $("#break")
         });
 
-        // Part B
+        // Actual trials
 
         params.stimT.forEach(function(stim, index) {
 

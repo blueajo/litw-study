@@ -34,12 +34,18 @@
 	text-align: center;
 }
 
-#trials img {
+#trials > img {
 	width: 600px;
 	height: auto;
-	/*margin-left: 10px;
-	margin-right: 10px;
-	margin-bottom: 20px;*/
+	margin: 0 auto;
+	display: block;
+	border: 1px solid #000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.emoji-div img {
+	height: 100px;
 	margin: 0 auto;
 	display: block;
 	border: 1px solid #000;
