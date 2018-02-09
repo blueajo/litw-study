@@ -112,6 +112,13 @@ module.exports = (function() {
    initJsPsych = function() {
       // ******* BEGIN STUDY PROGRESSION ******** //
 
+            timeline.push({
+         type: "display-slide",
+         display_element: $("#trials"),
+         name: "part2Searching3Template",
+         template: part2searching3Template({withTouch: window.litwWithTouch})
+      });
+
       // 1. GENERAL INSTRUCTIONS PAGE
       timeline.push({
          type: "display-slide",
