@@ -5,7 +5,7 @@
 </div>
 <!--
 <div>
-	<img src="img/stim-img/highPartB.png"/>
+	<img src="img/stim-img/mediumPartB.png"/>
 </div>. -->
 <script>
 	$(document).ready(function() {
@@ -14,8 +14,8 @@
 		var img = new Image();
 		var x = -100;
 		var y = -100;
-
-		img.src = "img/stim-img/highPartB.png";
+		var clickedOn = {};
+		img.src = "img/stim-img/mediumPartB.png";
 		img.onload = function() {
 			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
 		}
@@ -25,7 +25,7 @@
 			newY = e.pageY - offset.top;
 			if (clickedOn == false) {
 				context.beginPath();
-				context.arc(newX, newY, 25, 0, 2*Math.PI);
+				context.arc(newX, newY, 25, 0, 2 * Math.PI);
 				context.stroke();
 				context.fillStyle = "red";
 				context.fill();
@@ -51,6 +51,8 @@
 			}
 			console.log(x);
 			console.log(y);
+			clickedOn["x"] = x;
+			clickedOn["y"] = y;
 		})
 
 	});

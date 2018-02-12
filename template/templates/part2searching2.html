@@ -1,4 +1,59 @@
 <p></p>
 <div>
-	<img src="img/stim-img/lowPartB.png"/>
+<canvas id="myCanvas" width="800" height="550">
+</canvas>
 </div>
+<!--
+<div>
+	<img src="img/stim-img/lowPartB.png"/>
+</div>. -->
+<script>
+	$(document).ready(function() {
+		var clickedOn = false;
+		var context = document.getElementById('myCanvas').getContext("2d");
+		var img = new Image();
+		var x = -100;
+		var y = -100;
+		var clickedOn = {};
+		img.src = "img/stim-img/lowPartB.png";
+		img.onload = function() {
+			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
+		}
+		$("#myCanvas").click(function(e) {
+			var offset = $(this).offset();
+			newX = e.pageX - offset.left;
+			newY = e.pageY - offset.top;
+			if (clickedOn == false) {
+				context.beginPath();
+				context.arc(newX, newY, 25, 0, 2*Math.PI);
+				context.stroke();
+				context.fillStyle = "red";
+				context.fill();
+				clickedOn = true;
+				x = newX;
+				y = newY;
+				context.closePath();
+			} else {
+
+
+				context.beginPath();
+				context.clearRect(0,0, img.width * 0.78, img.height * 0.75);
+				context.closePath();
+				context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
+				context.arc(newX, newY, 25, 0, 2*Math.PI);
+				context.stroke();
+				context.fillStyle = "red";
+				context.fill();
+				clickedOn = true;
+				x = newX;
+				y = newY;
+				context.closePath();
+			}
+			console.log(x);
+			console.log(y);
+			clickedOn["x"] = x;
+			clickedOn["y"] = y;
+		})
+
+	});
+</script>

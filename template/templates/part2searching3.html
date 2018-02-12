@@ -14,7 +14,7 @@
 		var img = new Image();
 		var x = -100;
 		var y = -100;
-
+		var clickedOn = {};
 		img.src = "img/stim-img/highPartB.png";
 		img.onload = function() {
 			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
@@ -34,8 +34,6 @@
 				y = newY;
 				context.closePath();
 			} else {
-
-
 				context.beginPath();
 				context.clearRect(0,0, img.width * 0.78, img.height * 0.75);
 				context.closePath();
@@ -49,8 +47,8 @@
 				y = newY;
 				context.closePath();
 			}
-			console.log(x);
-			console.log(y);
+			clickedOn["x"] = x;
+			clickedOn["y"] = y;
 		})
 
 	});
