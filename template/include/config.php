@@ -16,9 +16,6 @@
 /** LabintheWild API URL */
 define('LITW_API_URL', 'localhost:8081');
 
-/* The database in use. Can be either "mysql" or "sqlite" */
-define('DB_TARGET', 'sqlite');
-
 /** The name of the database */
 define('DB_NAME', 'db/template.db');
 
@@ -32,9 +29,5 @@ define('DB_PASS', '');
 
 /** Database hostname */
 define('DB_HOST', '');
-
-
-// ** Email Settings ** //
-define('ADMIN_EMAIL', '');
 
 ?>
