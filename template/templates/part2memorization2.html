@@ -39,6 +39,77 @@
 	$(document).ready(function() {
 		var answer = {};
 		answer["correct"] = correct;
+		
+		$("#image1").on("change", function() {
+			if (this.checked) {
+				correct++;
+			} else {
+				correct--;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image2").on("change", function() {
+			if (this.checked) {
+				correct--;
+			} else {
+				correct++;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image3").on("change", function() {
+			if (this.checked) {
+				correct--;
+			} else {
+				correct++;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image4").on("change", function() {
+			if (this.checked) {
+				correct--;
+			} else {
+				correct++;
+			}
+			answer["correct"] = correct;
+		});
+		$("#image5").on("change", function() {
+			if (this.checked) {
+				correct++;
+			} else {
+				correct--;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image6").on("change", function() {
+			if (this.checked) {
+				correct--;
+			} else {
+				correct++;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image7").on("change", function() {
+			if (this.checked) {
+				correct++;
+			} else {
+				correct--;
+			}
+			answer["correct"] = correct;
+		});
+
+		$("#image8").on("change", function() {
+			if (this.checked) {
+				correct--;
+			} else {
+				correct++;
+			}
+			answer["correct"] = correct;
+		});
 	});
 
 </script>

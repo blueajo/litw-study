@@ -25,7 +25,7 @@
         },
 
         initialize = function() {
-            var litw_locale = LITW.locale.getLocale() || "";
+            var litw_locale = /*LITW.locale.getLocale() || */"";
 
             if (!params._isInitialized) {
                 params.participantId = uuidv4();
