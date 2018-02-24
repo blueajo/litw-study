@@ -5,7 +5,7 @@
 <!-- img: mediumPartB.png -->
 <!-- there will be 8 choices for user to choose from-->
 <div>
-	<label for="image1"><!-- Image goes in here for label--></label>
+	<label for="image1"><img src="img/stim-img/mediumEmoji1.png"></label>
 	<input type= "checkbox" name="memorization" id="image1" value="incorrect" />
 
 	<label for="image2"><img src="img/stim-img/mediumEmoji2.png" /></label>
@@ -14,16 +14,16 @@
 	<label for="image3"><img src="img/stim-img/emojiMedium.png" /></label>
 	<input type= "checkbox" name="memorization" id="image3" value="correct" />
 
-	<label for="image4"><!-- Image goes in here for label--></label>
+	<label for="image4"><img src="img/stim-img/" /></label>
 	<input type= "checkbox" name="memorization" id="image4" value="incorrect" />
 
-	<label for="image5"><!-- Image goes in here for label--></label>
+	<label for="image5"><img src="img/stim-img/" /></label>
 	<input type= "checkbox" name="memorization" id="image5" value="incorrect" />
 
-	<label for="image6"><!-- Image goes in here for label--></label>
+	<label for="image6"><img src="img/stim-img/" /></label>
 	<input type= "checkbox" name="memorization" id="image6" value="incorrect" />
 
-	<label for="image7"><!-- Image goes in here for label--></label>
+	<label for="image7"><img src="img/stim-img/" /></label>
 	<input type= "checkbox" name="memorization" id="image7" value="incorrect" />
 
 	<label for="image8"><img src="img/stim-img/emojiMedium8.png" /></label>
@@ -32,11 +32,13 @@
 
 <script>
 
-	var IdsNotPicked = ["image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8"];
-	var IdsPicked = [];
+	/* When the  page first starts, all 8 are not picked and since 5 are incorrect
+	and not supposed to be picked, the number of correct is 5*/
+	var correct = 5; 
 
 	$(document).ready(function() {
-		console.log("Hello");
+		var answer = {};
+		answer["correct"] = correct;
 	});
-	
+
 </script>

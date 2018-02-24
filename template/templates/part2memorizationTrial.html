@@ -6,7 +6,7 @@
 <!-- there will be 8 choices for user to choose from-->
 <div>
 	<label for="image1"><!-- Image goes in here for label--></label>
-	<input type= "checkbox" name="memorization" id="image1" value="incorrect" />
+	<input type= "checkbox" name="memorization" id="image1" value="correct" />
 
 	<label for="image2"><!-- Image goes in here for label--></label>
 	<input type= "checkbox" name="memorization" id="image2" value="correct" />
@@ -21,12 +21,24 @@
 	<input type= "checkbox" name="memorization" id="image5" value="incorrect" />
 
 	<label for="image6"><!-- Image goes in here for label--></label>
-	<input type= "checkbox" name="memorization" id="image6" value="incorrect" />
+	<input type= "checkbox" name="memorization" id="image6" value="correct" />
 
 	<label for="image7"><!-- Image goes in here for label--></label>
-	<input type= "checkbox" name="memorization" id="image7" value="incorrect" />
+	<input type= "checkbox" name="memorization" id="image7" value="correct" />
 
 	<label for="image8"><!-- Image goes in here for label--></label>
 	<input type= "checkbox" name="memorization" id="image8" value="correct" />
 </div>
 
+<script>
+
+	/* When the  page first starts, all 8 are not picked and since 5 are incorrect
+	and not supposed to be picked, the number of correct is 5*/
+	var correct = 2; 
+
+	$(document).ready(function() {
+		var answer = {};
+		answer["correct"] = correct;
+	});
+
+</script>
