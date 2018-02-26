@@ -254,6 +254,7 @@ module.exports = (function() {
             LITW.utils.showSlide("instructions");
          }
       });
+
       timeline.push({
          type: "display-slide",
          display_element: $("#instructions"),
@@ -261,50 +262,55 @@ module.exports = (function() {
          template: instructions3Template({withTouch: window.litwWithTouch})
       });
 
-      // Practice for part B (for testing, comment out lines 268- 283)
-         params.practiceStimsB.forEach(function(stim, index) {
+      timeline.push({
+          type: "call-function",
+          func: function() {
+              $("#progress-header").html(progressTemplate({
+                  msg: C.progressMsg,
+                  progress: 1,
+                  total: 1
+              })).show();
+          }
+      });
 
-            // record tracking information
-            timeline.push({
-                type: "call-function",
-                func: function() {
-                    $("#progress-header").html(progressTemplate({
-                        msg: C.progressMsg,
-                        progress: Math.ceil((++params.currentProgress)/3),
-                        total: params.practiceStimsB.length/3
-                    }))
-                        .show();
+      timeline.push({
+        type: "display-slide",
+        display_element: $("#trials"),
+        name: "part2instructionsTrialTemplate"
+        template: part2instructionsTrialTemplate({withTouch: window.litwWithTouch})
+      });
 
-                    LITW.utils.showSlide("trials");
-                }
-            });
+      timeline.push({
+        type: "display-slide",
+        display_element: $("#trials"),
+        name: "part2searchingTrialTemplate"
+        template: part2searchingTrialTemplate({withTouch: window.litwWithTouch})
+      });
 
-            timeline.push(stim);
+      timeline.push({
+        type: "display-slide",
+        display_element: $("#trials"),
+        name: "part2memorizationTrialTemplate"
+        template: part2memorizationTrialTemplate({withTouch: window.litwWithTouch})
+      });
 
-            // register a function to submit data as soon
-            // as this trial is completed
-            timeline.push({
-                type: "call-function",
-                func: submitData
-            });
-        });
+      // PRE-TRIAL BREAK
+      timeline.push({
+         type: "call-function",
+         func: function() {
+            params.currentProgress = 0;
+            $("#progress-header").hide();
+            LITW.utils.showSlide("break");
+         }
+      });
 
-        // PRE-TRIAL BREAK
-        timeline.push({
-           type: "call-function",
-           func: function() {
-              params.currentProgress = 0;
-              $("#progress-header").hide();
-              LITW.utils.showSlide("break");
-           }
-        });
-        timeline.push({
-           type: "display-info",
-           name: "preTrialBreak",
-           content: C.preTrial,
-           withTouch: window.litwWithTouch,
-           display_element: $("#break")
-        });
+      timeline.push({
+         type: "display-info",
+         name: "preTrialBreak",
+         content: C.preTrial,
+         withTouch: window.litwWithTouch,
+         display_element: $("#break")
+      });
 
         // Actual trials
 
