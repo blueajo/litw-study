@@ -15,6 +15,56 @@
 require("../js/jsPsych-5.0.3/plugins/jspsych-animation");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
 
+// generates a shuffled array of numbers 0 (inclusive) through max (noninclusive)
+function randomNum(max, complexity) {
+  allNumbers = new Array();
+  for (var i = 0; i < max; i++) {
+    allNumbers.push(complexity + "/" + i);
+  }
+  shuffle(allNumbers);
+  return allNumbers;
+};
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+}
+
+function getPrompt(selection) {
+  var complexity = selection.charAt(0);
+  var idx = parseInt(selection.charAt(3));
+  if(complexity == "l") {
+    return loPrompts[idx];
+  } else if (complexity == "m") {
+    return mdPrompts[idx];
+  }
+  return hiPrompts[idx];
+}
+
+var loPrompts = ["Click to sign up for a new account. When ready, press space"];
+var mdPrompts = ["Click to change the language. When ready, press space"];
+var hiPrompts = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
+
+var loImgsA = randomNum(4, "lo")
+var mdImgsA = randomNum(4, "md")
+var hiImgsA = randomNum(4, "hi")
+
+var loImgsB = randomNum(1, "lo")
+var mdImgsB = randomNum(1, "md")
+var hiImgsB = randomNum(1, "hi")
+
+var partA1imgs = loImgsA.slice(0, 2).concat(mdImgsA.slice(0, 2), hiImgsA.slice(0, 2));
+var partA2imgs = loImgsA.slice(2, 4).concat(mdImgsA.slice(2, 4), hiImgsA.slice(2, 4));
+var partBimgs = loImgsB.slice(0, 1).concat(mdImgsB.slice(0, 1), hiImgsB.slice(0, 1));
+shuffle(partA1imgs);
+shuffle(partA2imgs);
+shuffle(partBimgs);
+
 module.exports = {
    "preTrial": {
       "header": "Nice job!",
@@ -34,7 +84,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/low1.png"]
+        "stimuli": ["img/stim-img/A/trial.png"]
       },
       {
         "type": "button-response",
@@ -51,7 +101,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/low2.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[0] + ".png"]
       },
       {
         "type": "button-response",
@@ -66,7 +116,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/medium1.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[1] + ".png"]
       },
       {
         "type": "button-response",
@@ -81,7 +131,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/medium2.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[2] + ".png"]
       },
       {
         "type": "button-response",
@@ -96,7 +146,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/high1.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[3] + ".png"]
       },
       {
         "type": "button-response",
@@ -111,7 +161,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/high2.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[4] + ".png"]
       },
       {
         "type": "button-response",
@@ -126,7 +176,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/high3.png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[5] + ".png"]
       },
       {
         "type": "button-response",
@@ -143,7 +193,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/low3.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[0] + ".png"]
       },
       {
         "type": "button-response",
@@ -158,7 +208,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/low4.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[1] + ".png"]
       },
       {
         "type": "button-response",
@@ -173,7 +223,7 @@ module.exports = {
             {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/medium3.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[2] + ".png"]
       },
       {
         "type": "button-response",
@@ -188,7 +238,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/medium4.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[3] + ".png"]
       },
       {
         "type": "button-response",
@@ -203,7 +253,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/high4.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[4] + ".png"]
       },
       {
         "type": "button-response",
@@ -218,7 +268,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/high5.png"]
+        "stimuli": ["img/stim-img/A/" + partA2imgs[5] + ".png"]
       },
       {
         "type": "button-response",
@@ -241,12 +291,12 @@ module.exports = {
     {
        "type": "single-stim",
        "is_html": true,
-       "prompt": "<img src='img/stim-img/trialPartB.png' class='trialsImgs'/>",
+       "prompt": "<img src='img/stim-img/B/trialimg.png' class='trialsImgs'/>",
        "choices": [32], // the numbers 1 - 2
     },
     {
        "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/trialEmoji.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
+       "stimulus": "<img src='img/stim-img/B/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
        "is_html": true,
        "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
        "choices": [49, 50, 51, 52], // the numbers 1 - 2
@@ -257,18 +307,18 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "Click to change the language. When ready, press space",
+				"prompt": getPrompt(partBimgs[0]),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "<img src='img/stim-img/mediumPartB.png' class='trialsImgs' />",
+				"prompt": "<img src='img/stim-img/B/" +  partBimgs[0] + "img.png' class='trialsImgs' />",
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
 				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/emojiMedium.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"stimulus": "<img src='img/stim-img/B/" + partBimgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
 				"is_html": true,
 				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
 				"choices": [49, 50, 51, 52], // the numbers 1 - 2
@@ -277,18 +327,18 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space",
+				"prompt": getPrompt(partBimgs[1]),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "<img src='img/stim-img/highPartB.png' class='trialsImgs'/>",
+				"prompt": "<img src='img/stim-img/B/" + partBimgs[1] + "img.png' class='trialsImgs'/>",
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
 				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/emojiHigh.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"stimulus": "<img src='img/stim-img/B/" + partBimgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
 				"is_html": true,
 				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
 				"choices": [49, 50, 51, 52], // the numbers 1 - 2
@@ -297,21 +347,21 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "Click to sign up for a new account. When ready, press space",
+				"prompt": getPrompt(partBimgs[2]),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": "<img src='img/stim-img/lowPartB.png' class='trialsImgs'/>",
+				"prompt": "<img src='img/stim-img/B/" + partBimgs[2] + "img.png' class='trialsImgs'/>",
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/emojiLow.png' class='trialsImgs'/><p>Was this image on the website?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Yes, [2] for No",
-				"choices": [49, 50], // the numbers 1 - 2
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B/" + partBimgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
 		 }
    ],
    "loadingMsg": "Loading resources:",

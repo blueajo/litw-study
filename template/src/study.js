@@ -111,14 +111,6 @@ module.exports = (function() {
 
    initJsPsych = function() {
       // ******* BEGIN STUDY PROGRESSION ******** //
-
-            timeline.push({
-         type: "display-slide",
-         display_element: $("#trials"),
-         name: "part2Searching3Template",
-         template: part2searching3Template({withTouch: window.litwWithTouch})
-      });
-
       // 1. GENERAL INSTRUCTIONS PAGE
       timeline.push({
          type: "display-slide",
@@ -223,8 +215,6 @@ module.exports = (function() {
       });
 
       // 6. TRIAL STIMS, PHASE 2
-      // re-shuffle stim order
-      // params.stimU = LITW.utils.shuffleArrays(params.stimU); // this way of shuffling doesn't work
       params.stimU.forEach(function(stim, index) {
 
          // record tracking information
