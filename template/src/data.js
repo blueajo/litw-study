@@ -14,6 +14,7 @@
 
 require("../js/jsPsych-5.0.3/plugins/jspsych-animation");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
+var part2searching1Template = require("../templates/part2searching1.html");
 
 // generates a shuffled array of numbers 0 (inclusive) through max (noninclusive)
 function randomNum(max, complexity) {
@@ -289,10 +290,11 @@ module.exports = {
        "choices": [32], // the numbers 1 - 2
     },
     {
-       "type": "single-stim",
-       "is_html": true,
-       "prompt": "<img src='img/stim-img/B/trialimg.png' class='trialsImgs'/>",
-       "choices": [32], // the numbers 1 - 2
+      "type": "display-search",
+      "display_element": $("#trials"),
+      "name": "part2searching1",
+      "template": part2searching1Template({withTouch: window.litwWithTouch}),
+      "img": "img/stim-img/B/trialimg.png"
     },
     {
        "type": "single-stim",
@@ -311,10 +313,11 @@ module.exports = {
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": "<img src='img/stim-img/B/" +  partBimgs[0] + "img.png' class='trialsImgs' />",
-				"choices": [32], // the numbers 1 - 2
+				"type": "display-search",
+        "display_element": $("#trials"),
+        "name": "part2searching1",
+        "template": part2searching1Template({withTouch: window.litwWithTouch}),
+        "img": "img/stim-img/B/" + partBimgs[0] + "img.png"
 		 },
 		 {
 				"type": "single-stim",
@@ -331,10 +334,11 @@ module.exports = {
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": "<img src='img/stim-img/B/" + partBimgs[1] + "img.png' class='trialsImgs'/>",
-				"choices": [32], // the numbers 1 - 2
+        "type": "display-search",
+        "display_element": $("#trials"),
+        "name": "part2searching1",
+        "template": part2searching1Template({withTouch: window.litwWithTouch}),
+        "img": "img/stim-img/B/" + partBimgs[1] + "img.png"
 		 },
 		 {
 				"type": "single-stim",
@@ -351,10 +355,11 @@ module.exports = {
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": "<img src='img/stim-img/B/" + partBimgs[2] + "img.png' class='trialsImgs'/>",
-				"choices": [32], // the numbers 1 - 2
+       "type": "display-search",
+       "display_element": $("#trials"),
+       "name": "part2searching1",
+       "template": part2searching1Template({withTouch: window.litwWithTouch}),
+       "img": "img/stim-img/B/" + partBimgs[2] + "img.png"
 		 },
 		 {
        "type": "single-stim",

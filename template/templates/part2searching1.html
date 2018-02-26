@@ -15,7 +15,7 @@
 		var x = -100;
 		var y = -100;
 		var point = {};
-		img.src = "img/stim-img/mediumPartB.png";
+		img.src = document.getElementById("imagetouse").innerHTML;
 		img.onload = function() {
 			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
 		}
@@ -53,6 +53,6 @@
 			point["y"] = y;
 		})
 
-		study.submitData(point);
+		//study.submitData(point);
 	});
 </script>
