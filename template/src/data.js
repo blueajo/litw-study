@@ -36,35 +36,55 @@ function shuffle(a) {
     }
 }
 
-function getPrompt(selection) {
+function getPrompt(selection, part) {
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
-  if(complexity == "l") {
-    return loPrompts[idx];
-  } else if (complexity == "m") {
-    return mdPrompts[idx];
+  // part is B1
+  if(part == "B1") {
+    if(complexity == "l") {
+      return loPromptsB1[idx];
+    } else if (complexity == "m") {
+      return mdPromptsB1[idx];
+    }
+    return hiPromptsB1[idx];
   }
-  return hiPrompts[idx];
+  // part is B2
+  if(complexity == "l") {
+    return loPromptsB2[idx];
+  } else if (complexity == "m") {
+    return mdPromptsB2[idx];
+  }
+  return hiPromptsB2[idx];
 }
 
-var loPrompts = ["Click to sign up for a new account. When ready, press space"];
-var mdPrompts = ["Click to change the language. When ready, press space"];
-var hiPrompts = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
+var loPromptsB1 = ["Click to sign up for a new account. When ready, press space"];
+var mdPromptsB1 = ["Click to change the language. When ready, press space"];
+var hiPromptsB1 = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
+
+var loPromptsB2 = ["Click to sign up for a new account. When ready, press space"];
+var mdPromptsB2 = ["Click to change the language. When ready, press space"];
+var hiPromptsB2 = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
 
 var loImgsA = randomNum(4, "lo")
 var mdImgsA = randomNum(4, "md")
 var hiImgsA = randomNum(4, "hi")
 
-var loImgsB = randomNum(1, "lo")
-var mdImgsB = randomNum(1, "md")
-var hiImgsB = randomNum(1, "hi")
+var loImgsB1 = randomNum(1, "lo")
+var mdImgsB1 = randomNum(1, "md")
+var hiImgsB1 = randomNum(1, "hi")
+
+var loImgsB2 = randomNum(1, "lo")
+var mdImgsB2 = randomNum(1, "md")
+var hiImgsB2 = randomNum(1, "hi")
 
 var partA1imgs = loImgsA.slice(0, 2).concat(mdImgsA.slice(0, 2), hiImgsA.slice(0, 2));
 var partA2imgs = loImgsA.slice(2, 4).concat(mdImgsA.slice(2, 4), hiImgsA.slice(2, 4));
-var partBimgs = loImgsB.slice(0, 1).concat(mdImgsB.slice(0, 1), hiImgsB.slice(0, 1));
+var partB1imgs = loImgsB1.slice(0, 1).concat(mdImgsB1.slice(0, 1), hiImgsB1.slice(0, 1));
+var partB2imgs = loImgsB2.slice(0, 1).concat(mdImgsB2.slice(0, 1), hiImgsB2.slice(0, 1)); // change this
 shuffle(partA1imgs);
 shuffle(partA2imgs);
-shuffle(partBimgs);
+shuffle(partB1imgs);
+shuffle(partB2imgs);
 
 module.exports = {
    "preTrial": {
@@ -282,7 +302,7 @@ module.exports = {
         "<button class='jspsych-btn' disabled>Very appealing</button>"]
       }
    ],
-   "practiceTask": [
+   "practiceTaskB1": [
      {
        "type": "single-stim",
        "is_html": true,
@@ -294,22 +314,22 @@ module.exports = {
       "display_element": $("#trials"),
       "name": "part2searching1",
       "template": part2searching1Template({withTouch: window.litwWithTouch}),
-      "img": "img/stim-img/B/trialimg.png"
+      "img": "img/stim-img/B1/trialimg.png"
     },
     {
        "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
+       "stimulus": "<img src='img/stim-img/B1/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
        "is_html": true,
        "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
        "choices": [49, 50, 51, 52], // the numbers 1 - 2
     }
    ],
-   "trialTasks": [
+   "trialTasksB1": [
 		 // 1
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partBimgs[0]),
+				"prompt": getPrompt(partB1imgs[0], "B1"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -317,11 +337,11 @@ module.exports = {
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
-        "img": "img/stim-img/B/" + partBimgs[0] + "img.png"
+        "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png"
 		 },
 		 {
 				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B/" + partBimgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"stimulus": "<img src='img/stim-img/B1/" + partB1imgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
 				"is_html": true,
 				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
 				"choices": [49, 50, 51, 52], // the numbers 1 - 2
@@ -330,7 +350,7 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partBimgs[1]),
+				"prompt": getPrompt(partB1imgs[1], "B1"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -338,11 +358,11 @@ module.exports = {
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
-        "img": "img/stim-img/B/" + partBimgs[1] + "img.png"
+        "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png"
 		 },
 		 {
 				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B/" + partBimgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"stimulus": "<img src='img/stim-img/B1/" + partB1imgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
 				"is_html": true,
 				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
 				"choices": [49, 50, 51, 52], // the numbers 1 - 2
@@ -351,7 +371,7 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partBimgs[2]),
+				"prompt": getPrompt(partB1imgs[2], "B1"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -359,11 +379,114 @@ module.exports = {
        "display_element": $("#trials"),
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
-       "img": "img/stim-img/B/" + partBimgs[2] + "img.png"
+       "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png"
 		 },
 		 {
        "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B/" + partBimgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 }
+   ],
+   "practiceTaskB2": [
+     {
+       "type": "single-stim",
+       "is_html": true,
+       "prompt": "Click to access the 'Parks & Outdoors Travel Guide. When ready, press space",
+       "choices": [32], // the numbers 1 - 2
+    },
+    {
+      "type": 'single-stim',
+      "stimulus": "<img src='img/stim-img/B2/trialimg.png'>",
+      "choices": [32],
+      "prompt": "Click to access the 'Parks & Outdoors Travel Guide. When ready, press space",
+      "response_ends_trial": true
+    },
+    {
+      type: 'survey-text',
+      questions: ["Click to access the 'Parks & Outdoors Travel Guide. When ready, press space"],
+    },
+    {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B2/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+    }
+   ],
+   "trialTasksB2": [
+		 // 1
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[0], "B2"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+		 {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[0] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[0], "B2"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[0], "B2")}],
+     },
+		 {
+				"type": "single-stim",
+				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"is_html": true,
+				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+				"choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 },
+		 // 2
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[1], "B2"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+     {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[1] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[1], "B2"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[1], "B2")}],
+     },
+		 {
+				"type": "single-stim",
+				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"is_html": true,
+				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+				"choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 },
+		 // 3
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[2], "B2"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+     {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[2], "B2"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[2], "B2")}],
+     },
+		 {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
        "is_html": true,
        "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
        "choices": [49, 50, 51, 52], // the numbers 1 - 2

@@ -5,7 +5,7 @@
 </div>
 <!--
 <div>
-	<img src="img/stim-img/highPartB.png"/>
+	<img src="img/stim-img/mediumPartB.png"/>
 </div>. -->
 <script>
 	$(document).ready(function() {
@@ -15,7 +15,7 @@
 		var x = -100;
 		var y = -100;
 		var point = {};
-		img.src = "img/stim-img/highPartB.png";
+		img.src = document.getElementById("imagetouse").innerHTML;
 		img.onload = function() {
 			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
 		}
@@ -24,24 +24,7 @@
 			newX = e.pageX - offset.left;
 			newY = e.pageY - offset.top;
 			if (clickedOn == false) {
-				context.beginPath();
-				context.arc(newX, newY, 25, 0, 2*Math.PI);
-				context.stroke();
-				context.fillStyle = "red";
-				context.fill();
-				clickedOn = true;
-				x = newX;
-				y = newY;
-				context.closePath();
 			} else {
-				context.beginPath();
-				context.clearRect(0,0, img.width * 0.78, img.height * 0.75);
-				context.closePath();
-				context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
-				context.arc(newX, newY, 25, 0, 2*Math.PI);
-				context.stroke();
-				context.fillStyle = "red";
-				context.fill();
 				clickedOn = true;
 				x = newX;
 				y = newY;
@@ -50,6 +33,7 @@
 			point["x"] = x;
 			point["y"] = y;
 		})
-		study.submitData(point);
+
+		//study.submitData(point);
 	});
 </script>
