@@ -34,6 +34,11 @@ jsPsych.plugins["single-stim"] = (function() {
     // that need to be cleared if the trial ends early
     var setTimeoutHandlers = [];
 
+    //show prompt if there is one
+    if (trial.prompt !== "") {
+      display_element.append(trial.prompt);
+    }
+
     // display stimulus
     if (!trial.is_html) {
       display_element.append($('<img>', {
@@ -45,11 +50,6 @@ jsPsych.plugins["single-stim"] = (function() {
         html: trial.stimulus,
         id: 'jspsych-single-stim-stimulus'
       }));
-    }
-
-    //show prompt if there is one
-    if (trial.prompt !== "") {
-      display_element.append(trial.prompt);
     }
 
     // store response

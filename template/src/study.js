@@ -20,8 +20,8 @@ require("jquery-ui-bundle");
 
 var irbTemplate = require("../templates/irb.html");
 var instructionsTemplate = require("../templates/instructions.html");
-var instructions2Template = require("../templates/instructions2a.html");
-var instructions3Template = require("../templates/instructions2b.html");
+var instructions2aTemplate = require("../templates/instructions2a.html");
+var instructions2bTemplate = require("../templates/instructions2b.html");
 var loadingTemplate = require("../templates/loading.html");
 var resultsTemplate = require("../templates/results.html");
 var progressTemplate = require("../templates/progress.html");
@@ -206,8 +206,8 @@ module.exports = (function() {
       timeline.push({
          type: "display-slide",
          display_element: $("#instructions"),
-         name: "instructions3",
-         template: instructions3Template({withTouch: window.litwWithTouch})
+         name: "instructions2a",
+         template: instructions2aTemplate({withTouch: window.litwWithTouch})
       });
 
       // Practice (for testing, comment out lines 268- 283)
@@ -284,7 +284,7 @@ module.exports = (function() {
           });
       });
 
-      /* PART 3: INTERACTION AND MEMORIZATION TASK STARTS HERE*/
+      /* PART 2b: INTERACTION AND MEMORIZATION TASK STARTS HERE*/
 
       // INSTRUCTIONS PAGE
       timeline.push({
@@ -298,8 +298,8 @@ module.exports = (function() {
       timeline.push({
          type: "display-slide",
          display_element: $("#instructions"),
-         name: "instructions3",
-         template: instructions3Template({withTouch: window.litwWithTouch})
+         name: "instructions2b",
+         template: instructions2bTemplate({withTouch: window.litwWithTouch})
       });
 
       // Practice for part B (for testing, comment out lines 268- 283)

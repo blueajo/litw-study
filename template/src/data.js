@@ -343,8 +343,8 @@ module.exports = {
       "stimulus": "img/stim-img/B1/trialicon.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-"prompt": "<p>Did this image appear on the previous website screenshot?</p>",
-      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+"prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
+      "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     }
    ],
    "trialTasksB1": [
@@ -368,7 +368,7 @@ module.exports = {
        "stimulus": "img/stim-img/B1/" + partB1imgs[0] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 2
 		 {
@@ -390,7 +390,7 @@ module.exports = {
        "stimulus": "img/stim-img/B1/" + partB1imgs[1] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 3
 		 {
@@ -412,7 +412,7 @@ module.exports = {
        "stimulus": "img/stim-img/B1/" + partB1imgs[2] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
      // 4
     {
@@ -434,7 +434,7 @@ module.exports = {
       "stimulus": "img/stim-img/B1/" + partB1imgs[3] + "icon.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+      "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     },
     // 5
     {
@@ -456,7 +456,7 @@ module.exports = {
       "stimulus": "img/stim-img/B1/" + partB1imgs[4] + "icon.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+      "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     },
     // 6
     {
@@ -478,7 +478,7 @@ module.exports = {
       "stimulus": "img/stim-img/B1/" + partB1imgs[5] + "icon.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+      "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     }
    ],
    "practiceTaskB2": [
@@ -504,7 +504,7 @@ module.exports = {
       "stimulus": "img/stim-img/B2/trialicon.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+      "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     }
    ],
    "trialTasksB2": [
@@ -531,7 +531,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 2
 		 {
@@ -556,7 +556,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 3
 		 {
@@ -581,7 +581,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
      // 4
 		 {
@@ -606,7 +606,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 5
 		 {
@@ -631,7 +631,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
 		 // 6
 		 {
@@ -656,7 +656,7 @@ module.exports = {
        "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "icon.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+       "prompt": "<p>Did you see this image on the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      }
    ],
    "loadingMsg": "Loading resources:",
