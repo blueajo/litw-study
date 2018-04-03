@@ -36,50 +36,72 @@ function shuffle(a) {
     }
 }
 
-function getPrompt(selection, part) {
+function getPrompt(selection, section, part) {
+  // parse prompt to get
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
-  // part is B1
-  if(part == "B1") {
+
+  var prompt = "";
+
+  // section is B1
+  if(section == "B1") {
     if(complexity == "l") {
-      return loPromptsB1[idx];
+      prompt = loPromptsB1[idx];
     } else if (complexity == "m") {
-      return mdPromptsB1[idx];
+      prompt = mdPromptsB1[idx];
     }
-    return hiPromptsB1[idx];
+    prompt = hiPromptsB1[idx];
+  } else { // section is B2
+    if(complexity == "l") {
+      prompt = loPromptsB2[idx];
+    } else if (complexity == "m") {
+      prompt = mdPromptsB2[idx];
+    }
+    prompt = hiPromptsB2[idx];
   }
-  // part is B2
-  if(complexity == "l") {
-    return loPromptsB2[idx];
-  } else if (complexity == "m") {
-    return mdPromptsB2[idx];
+
+  // return whole prompt or just TASK
+  if(part == "whole") {
+    return prompt.prompt + " " + prompt.task + " When ready, press space to start the task.";
   }
-  return hiPromptsB2[idx];
+  return prompt.task;
 }
 
-var loPromptsB1 = ["Click to sign up for a new account. When ready, press space"];
-var mdPromptsB1 = ["Click to change the language. When ready, press space"];
-var hiPromptsB1 = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
+var loPromptsB1 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
+var mdPromptsB1 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
+var hiPromptsB1 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
 
-var loPromptsB2 = ["Click to sign up for a new account. When ready, press space"];
-var mdPromptsB2 = ["Click to change the language. When ready, press space"];
-var hiPromptsB2 = ["Click on the the title of the quiz that was staff created and has 5 stars. When ready, press space"];
+var loPromptsB2 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
+var mdPromptsB2 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
+var hiPromptsB2 = [{prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"},
+                   {prompt: "default", task: "default"}];
 
 var loImgsA = randomNum(4, "lo")
 var mdImgsA = randomNum(4, "md")
 var hiImgsA = randomNum(4, "hi")
 
-var loImgsB1 = randomNum(1, "lo")
-var mdImgsB1 = randomNum(1, "md")
-var hiImgsB1 = randomNum(1, "hi")
+var loImgsB1 = randomNum(2, "lo")
+var mdImgsB1 = randomNum(2, "md")
+var hiImgsB1 = randomNum(2, "hi")
 
-var loImgsB2 = randomNum(1, "lo")
-var mdImgsB2 = randomNum(1, "md")
-var hiImgsB2 = randomNum(1, "hi")
+var loImgsB2 = randomNum(2, "lo")
+var mdImgsB2 = randomNum(2, "md")
+var hiImgsB2 = randomNum(2, "hi")
 
 var partA1imgs = loImgsA.slice(0, 4).concat(mdImgsA.slice(0, 4), hiImgsA.slice(0, 4));
-var partB1imgs = loImgsB1.slice(0, 1).concat(mdImgsB1.slice(0, 1), hiImgsB1.slice(0, 1));
-var partB2imgs = loImgsB2.slice(0, 1).concat(mdImgsB2.slice(0, 1), hiImgsB2.slice(0, 1)); // change this
+var partB1imgs = loImgsB1.slice(0, 2).concat(mdImgsB1.slice(0, 2), hiImgsB1.slice(0, 2));
+var partB2imgs = loImgsB2.slice(0, 2).concat(mdImgsB2.slice(0, 2), hiImgsB2.slice(0, 2)); // slice to allow adding more stimuli if needed
 shuffle(partA1imgs);
 shuffle(partB1imgs);
 shuffle(partB2imgs);
@@ -326,7 +348,7 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB1imgs[0], "B1"),
+				"prompt": getPrompt(partB1imgs[0], "B1", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -335,7 +357,7 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
-        "prompt": getPrompt(partB1imgs[2], "B1")
+        "prompt": getPrompt(partB1imgs[0], "B1", "part")
 		 },
 		 {
 				"type": "single-stim",
@@ -348,7 +370,7 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB1imgs[1], "B1"),
+				"prompt": getPrompt(partB1imgs[1], "B1", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -357,7 +379,7 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
-        "prompt": getPrompt(partB1imgs[2], "B1")
+        "prompt": getPrompt(partB1imgs[1], "B1", "part")
 		 },
 		 {
 				"type": "single-stim",
@@ -370,7 +392,7 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB1imgs[2], "B1"),
+				"prompt": getPrompt(partB1imgs[2], "B1", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
@@ -379,7 +401,7 @@ module.exports = {
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
-       "prompt": getPrompt(partB1imgs[2], "B1")
+       "prompt": getPrompt(partB1imgs[2], "B1", "part")
 		 },
 		 {
        "type": "single-stim",
@@ -387,7 +409,73 @@ module.exports = {
        "is_html": true,
        "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
        "choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 }
+		 },
+     // 4
+    {
+       "type": "single-stim",
+       "is_html": true,
+       "prompt": getPrompt(partB1imgs[3], "B1", "whole"),
+       "choices": [32], // the numbers 1 - 2
+    },
+    {
+       "type": "display-search",
+        "display_element": $("#trials"),
+        "name": "part2searching1",
+        "template": part2searching1Template({withTouch: window.litwWithTouch}),
+        "img": "img/stim-img/B1/" + partB1imgs[3] + "img.png",
+        "prompt": getPrompt(partB1imgs[3], "B1", "part")
+    },
+    {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[3] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+    },
+    // 5
+    {
+       "type": "single-stim",
+       "is_html": true,
+       "prompt": getPrompt(partB1imgs[4], "B1", "whole"),
+       "choices": [32], // the numbers 1 - 2
+    },
+    {
+        "type": "display-search",
+        "display_element": $("#trials"),
+        "name": "part2searching1",
+        "template": part2searching1Template({withTouch: window.litwWithTouch}),
+        "img": "img/stim-img/B1/" + partB1imgs[4] + "img.png",
+        "prompt": getPrompt(partB1imgs[4], "B1", "part")
+    },
+    {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[4] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+    },
+    // 6
+    {
+       "type": "single-stim",
+       "is_html": true,
+       "prompt": getPrompt(partB1imgs[5], "B1", "whole"),
+       "choices": [32], // the numbers 1 - 2
+    },
+    {
+       "type": "display-search",
+       "display_element": $("#trials"),
+       "name": "part2searching1",
+       "template": part2searching1Template({withTouch: window.litwWithTouch}),
+       "img": "img/stim-img/B1/" + partB1imgs[5] + "img.png",
+       "prompt": getPrompt(partB1imgs[5], "B1", "part")
+    },
+    {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[5] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+    }
    ],
    "practiceTaskB2": [
      {
@@ -405,7 +493,7 @@ module.exports = {
     },
     {
       type: 'survey-text',
-      questions: ["Click to access the 'Parks & Outdoors Travel Guide. When ready, press space"],
+      questions: ["Click to access the 'Parks & Outdoors Travel Guide."],
     },
     {
        "type": "single-stim",
@@ -420,19 +508,19 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB2imgs[0], "B2"),
+				"prompt": getPrompt(partB2imgs[0], "B2", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
 		 {
        "type": 'single-stim',
        "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[0] + "img.png'>",
        "choices": [32],
-       "prompt": getPrompt(partB2imgs[0], "B2"),
+       "prompt": getPrompt(partB2imgs[0], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
        type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[0], "B2")}],
+       questions: [{prompt: getPrompt(partB2imgs[0], "B2", "part")}],
      },
 		 {
 				"type": "single-stim",
@@ -445,19 +533,19 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB2imgs[1], "B2"),
+				"prompt": getPrompt(partB2imgs[1], "B2", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
      {
        "type": 'single-stim',
        "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[1] + "img.png'>",
        "choices": [32],
-       "prompt": getPrompt(partB2imgs[1], "B2"),
+       "prompt": getPrompt(partB2imgs[1], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
        type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[1], "B2")}],
+       questions: [{prompt: getPrompt(partB2imgs[1], "B2", "part")}],
      },
 		 {
 				"type": "single-stim",
@@ -470,23 +558,98 @@ module.exports = {
 		 {
 				"type": "single-stim",
 				"is_html": true,
-				"prompt": getPrompt(partB2imgs[2], "B2"),
+				"prompt": getPrompt(partB2imgs[2], "B2", "whole"),
 				"choices": [32], // the numbers 1 - 2
 		 },
      {
        "type": 'single-stim',
        "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "img.png'>",
        "choices": [32],
-       "prompt": getPrompt(partB2imgs[2], "B2"),
+       "prompt": getPrompt(partB2imgs[2], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
        type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[2], "B2")}],
+       questions: [{prompt: getPrompt(partB2imgs[2], "B2", "part")}],
      },
 		 {
        "type": "single-stim",
        "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+       "is_html": true,
+       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 },
+     // 4
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[0], "B2", "whole"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+		 {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[3] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[0], "B2", "part"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[3], "B2", "part")}],
+     },
+		 {
+				"type": "single-stim",
+				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[3] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"is_html": true,
+				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+				"choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 },
+		 // 5
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[1], "B2", "whole"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+     {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[4] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[1], "B2", "part"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[4], "B2", "part")}],
+     },
+		 {
+				"type": "single-stim",
+				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[4] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
+				"is_html": true,
+				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
+				"choices": [49, 50, 51, 52], // the numbers 1 - 2
+		 },
+		 // 6
+		 {
+				"type": "single-stim",
+				"is_html": true,
+				"prompt": getPrompt(partB2imgs[2], "B2", "whole"),
+				"choices": [32], // the numbers 1 - 2
+		 },
+     {
+       "type": 'single-stim',
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[5] + "img.png'>",
+       "choices": [32],
+       "prompt": getPrompt(partB2imgs[2], "B2", "part"),
+       "response_ends_trial": true
+		 },
+     {
+       type: 'survey-text',
+       questions: [{prompt: getPrompt(partB2imgs[5], "B2", "part")}],
+     },
+		 {
+       "type": "single-stim",
+       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[5] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
        "is_html": true,
        "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
        "choices": [49, 50, 51, 52], // the numbers 1 - 2
