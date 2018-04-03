@@ -19,8 +19,11 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.append(trial.template);
         display_element.i18n();
 
-        LITW.utils.showNextButton(function() {
-            if(trial.finish) trial.finish();
+        display_element.find("canvas").click(function() {
+            console.log("Hello from search ")
+            if(trial.finish)  {
+                trial.finish();
+            }
             display_element.empty();
             jsPsych.finishTrial();
         });
