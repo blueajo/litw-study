@@ -62,30 +62,33 @@ function getPrompt(selection, section, part) {
 
   // return whole prompt or just TASK
   if(part == "whole") {
-    return prompt.prompt + " " + prompt.task + " When ready, press space to start the task.";
+    if(section == "B1") {
+      return "<strong>Your scenario:</strong> " + prompt.prompt + " <strong>" + prompt.task + "</strong><br><br>Remember to complete the task as quickly as possible. Press space to begin.";
+    }
+    return "<strong>Your scenario:</strong> " + prompt.prompt + " You want to find out <strong>" + prompt.task.toLowerCase() + "</strong><br><br>As soon as you find the answer, click anywhere on the image to proceed. Remember to complete the task as quickly as possible. Press space to begin.";
   }
-  return prompt.task;
+  return "<strong>" + prompt.task + "</strong>";
 }
 
-var loPromptsB1 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
-var mdPromptsB1 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
-var hiPromptsB1 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
+var loPromptsB1 = [{prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."}];
+var mdPromptsB1 = [{prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."}];
+var hiPromptsB1 = [{prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."},
+                   {prompt: "You are on a website trying to do something.", task: "Click on the..."}];
 
-var loPromptsB2 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
-var mdPromptsB2 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
-var hiPromptsB2 = [{prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"},
-                   {prompt: "default", task: "default"}];
+var loPromptsB2 = [{prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"}];
+var mdPromptsB2 = [{prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"}];
+var hiPromptsB2 = [{prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"},
+                   {prompt: "You are on a website trying to do something.", task: "What is the...?"}];
 
 var loImgsA = randomNum(4, "lo")
 var mdImgsA = randomNum(4, "md")
@@ -336,11 +339,12 @@ module.exports = {
       "prompt": "Click to access the 'Parks & Outdoors Travel Guide. When ready, press space"
     },
     {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B1/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+      "type": "button-response",
+      "stimulus": "img/stim-img/B1/trialicon.png",
+      "choices": ["Yes","No","I don't know"],
+      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+"prompt": "<p>Did this image appear on the previous website screenshot?</p>",
+      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
     }
    ],
    "trialTasksB1": [
@@ -359,13 +363,13 @@ module.exports = {
         "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
         "prompt": getPrompt(partB1imgs[0], "B1", "part")
 		 },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B1/" + partB1imgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B1/" + partB1imgs[0] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 2
 		 {
 				"type": "single-stim",
@@ -381,13 +385,13 @@ module.exports = {
         "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
         "prompt": getPrompt(partB1imgs[1], "B1", "part")
 		 },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B1/" + partB1imgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B1/" + partB1imgs[1] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 3
 		 {
 				"type": "single-stim",
@@ -403,13 +407,11 @@ module.exports = {
        "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
        "prompt": getPrompt(partB1imgs[2], "B1", "part")
 		 },
-		 {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "preamble": "<img src='img/stim-img/B1/" + partB1imgs[2] + "icon.png'/>",
+       "type": 'survey-multi-choice',
+       "questions": [{prompt: "Did this image appear on the previous website screenshot?", options: ["Yes", "No", "I don't know"], required:true,}]
+     },
      // 4
     {
        "type": "single-stim",
@@ -426,11 +428,11 @@ module.exports = {
         "prompt": getPrompt(partB1imgs[3], "B1", "part")
     },
     {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[3] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+      "type": "button-response",
+      "stimulus": "img/stim-img/B1/" + partB1imgs[3] + "icon.png",
+      "choices": ["Yes","No","I don't know"],
+      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
     },
     // 5
     {
@@ -448,11 +450,11 @@ module.exports = {
         "prompt": getPrompt(partB1imgs[4], "B1", "part")
     },
     {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[4] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+      "type": "button-response",
+      "stimulus": "img/stim-img/B1/" + partB1imgs[4] + "icon.png",
+      "choices": ["Yes","No","I don't know"],
+      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
     },
     // 6
     {
@@ -470,11 +472,11 @@ module.exports = {
        "prompt": getPrompt(partB1imgs[5], "B1", "part")
     },
     {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B1/" + partB1imgs[5] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+      "type": "button-response",
+      "stimulus": "img/stim-img/B1/" + partB1imgs[5] + "icon.png",
+      "choices": ["Yes","No","I don't know"],
+      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
     }
    ],
    "practiceTaskB2": [
@@ -486,21 +488,21 @@ module.exports = {
     },
     {
       "type": 'single-stim',
-      "stimulus": "<img src='img/stim-img/B2/trialimg.png'>",
+      "stimulus": "img/stim-img/B2/trialimg.png'>",
       "choices": [32],
       "prompt": "Click to access the 'Parks & Outdoors Travel Guide. When ready, press space",
       "response_ends_trial": true
     },
     {
-      type: 'survey-text',
-      questions: ["Click to access the 'Parks & Outdoors Travel Guide."],
+      "type": 'survey-text',
+      "questions": ["Click to access the 'Parks & Outdoors Travel Guide.<br>Leave the answer blank if you don't know or forgot."],
     },
     {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B2/trialicon.png' class='trialsImgs' /><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
+      "type": "button-response",
+      "stimulus": "img/stim-img/B2/trialicon.png",
+      "choices": ["Yes","No","I don't know"],
+      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+      "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
     }
    ],
    "trialTasksB2": [
@@ -513,22 +515,22 @@ module.exports = {
 		 },
 		 {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[0] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[0], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[0], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[0], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[0] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 2
 		 {
 				"type": "single-stim",
@@ -538,22 +540,22 @@ module.exports = {
 		 },
      {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[1] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[1], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[1], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[1], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[1] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 3
 		 {
 				"type": "single-stim",
@@ -563,22 +565,22 @@ module.exports = {
 		 },
      {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[2], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[2], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[2], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[2] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
      // 4
 		 {
 				"type": "single-stim",
@@ -588,22 +590,22 @@ module.exports = {
 		 },
 		 {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[3] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[0], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[3], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[3], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[3] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 5
 		 {
 				"type": "single-stim",
@@ -613,22 +615,22 @@ module.exports = {
 		 },
      {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[4] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[1], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[4], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[4], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-				"type": "single-stim",
-				"stimulus": "<img src='img/stim-img/B2/" + partB2imgs[4] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-				"is_html": true,
-				"prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-				"choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 },
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     },
 		 // 6
 		 {
 				"type": "single-stim",
@@ -638,22 +640,22 @@ module.exports = {
 		 },
      {
        "type": 'single-stim',
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[5] + "img.png'>",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "img.png'>",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[2], "B2", "part"),
        "response_ends_trial": true
 		 },
      {
-       type: 'survey-text',
-       questions: [{prompt: getPrompt(partB2imgs[5], "B2", "part")}],
+       "type": 'survey-text',
+       "questions": [getPrompt(partB2imgs[5], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
      },
-		 {
-       "type": "single-stim",
-       "stimulus": "<img src='img/stim-img/B2/" + partB2imgs[5] + "icon.png' class='trialsImgs'/><p>Which quadrant is this image in?</p>",
-       "is_html": true,
-       "prompt": "Type [1] for Top Left, [2] for Top Right, [3] for Bottom Left, [4] for Bottom Right",
-       "choices": [49, 50, 51, 52], // the numbers 1 - 2
-		 }
+     {
+       "type": "button-response",
+       "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
+     }
    ],
    "loadingMsg": "Loading resources:",
    "progressMsg": "Progress:",
