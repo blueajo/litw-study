@@ -20,8 +20,8 @@ require("jquery-ui-bundle");
 
 var irbTemplate = require("../templates/irb.html");
 var instructionsTemplate = require("../templates/instructions.html");
-var instructions2Template = require("../templates/instructions2.html");
-var instructions3Template = require("../templates/instructions3.html");
+var instructions2Template = require("../templates/instructions2a.html");
+var instructions3Template = require("../templates/instructions2b.html");
 var loadingTemplate = require("../templates/loading.html");
 var resultsTemplate = require("../templates/results.html");
 var progressTemplate = require("../templates/progress.html");
