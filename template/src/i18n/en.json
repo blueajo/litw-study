@@ -30,7 +30,9 @@
     "litw-instruct-body-2-p1": "You will be either asked to rate each website on how appealing it is to you.  Let's give it a try!",
     "litw-instruct-body-1-p2": "As before, you'll be shown website screenshots like this for 500 ms:",
     "litw-instruct-body-2-p2": "However, this time, you will be asked to rate the websites on their usability instead of appeal.",
-    "litw-instruct-body-pt2-p1": "You have reached the second half of the experiment.  This section has two parts.  In the first section, we will give you something to search for on a website and your job is to find it and click on this.  Try to do this task as fast as possible.",
-    "litw-instruct-body-pt2-p2": "In the second part of the experiment, we will present different stimuli and we will have you select which of these stimuli appeared on the previous website.",
-    "litw-memorization-prompt": "Click on the images that appeared on the previous website."
+    "litw-instruct-body-pt2a-p1": "You have now entered the second part of the experiment.  For each trial, you will be given a task to complete on a website.  When the website is displayed, we would like you to complete the task as quickly as possible",
+    "litw-instruct-body-pt2a-p2": "Afterward, you will  be asked some follow up questions about what you saw on the previous website.  Do not spend time trying to memorize the page - every second you spend looking at the website will decrease your web browsing proficiency score!",
+    "litw-instruct-body-pt2-p3": "Let's give it a try! Click on the arrow button to do a test trial.",
+    "litw-instruct-body-pt2b-p1": "You have now entered the third part of the experiment. For each trial, you will be asked to find some information on a website. Click ANYWHERE on the website as soon as you have found the information. The website will disappear, and a text box will show up for you to type the answer.",
+    "litw-instruct-body-pt2b-p2": "As before, you will be asked some follow up questions about what you saw on the previous website. Remember not to spend time trying to memorize the page - every second you spend looking at the website will decrease your web browsing proficiency score!"
 }
