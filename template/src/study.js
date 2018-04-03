@@ -101,7 +101,7 @@ module.exports = (function() {
 
    initJsPsych = function() {
 
-/*
+
       // ******* BEGIN STUDY PROGRESSION ******** //
       // 1. GENERAL INSTRUCTIONS PAGE
       timeline.push({

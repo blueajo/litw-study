@@ -408,9 +408,11 @@ module.exports = {
        "prompt": getPrompt(partB1imgs[2], "B1", "part")
 		 },
      {
-       "preamble": "<img src='img/stim-img/B1/" + partB1imgs[2] + "icon.png'/>",
-       "type": 'survey-multi-choice',
-       "questions": [{prompt: "Did this image appear on the previous website screenshot?", options: ["Yes", "No", "I don't know"], required:true,}]
+       "type": "button-response",
+       "stimulus": "img/stim-img/B1/" + partB1imgs[2] + "icon.png",
+       "choices": ["Yes","No","I don't know"],
+       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
+       "prompt": "<p>Did this image appear on the previous website screenshot?</p>"
      },
      // 4
     {
