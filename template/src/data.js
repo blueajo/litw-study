@@ -314,7 +314,8 @@ module.exports = {
       "display_element": $("#trials"),
       "name": "part2searching1",
       "template": part2searching1Template({withTouch: window.litwWithTouch}),
-      "img": "img/stim-img/B1/trialimg.png"
+      "img": "img/stim-img/B1/trialimg.png",
+      "prompt": "Click to access the 'Parks & Outdoors Travel Guide. When ready, press space"
     },
     {
        "type": "single-stim",
@@ -337,7 +338,8 @@ module.exports = {
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
-        "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png"
+        "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
+        "prompt": getPrompt(partB1imgs[2], "B1")
 		 },
 		 {
 				"type": "single-stim",
@@ -358,7 +360,8 @@ module.exports = {
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
-        "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png"
+        "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
+        "prompt": getPrompt(partB1imgs[2], "B1")
 		 },
 		 {
 				"type": "single-stim",
@@ -379,7 +382,8 @@ module.exports = {
        "display_element": $("#trials"),
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
-       "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png"
+       "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
+       "prompt": getPrompt(partB1imgs[2], "B1")
 		 },
 		 {
        "type": "single-stim",

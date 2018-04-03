@@ -101,6 +101,8 @@ module.exports = (function() {
 
    initJsPsych = function() {
 
+     /*
+
       // ******* BEGIN STUDY PROGRESSION ******** //
       // 1. GENERAL INSTRUCTIONS PAGE
       timeline.push({
@@ -231,7 +233,7 @@ module.exports = (function() {
             type: "call-function",
             func: submitData
          });
-      });
+      }); */
 
       /* PART 2: SEARCHING AND MEMORIZATION TASK STARTS HERE */
 

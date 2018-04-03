@@ -15,6 +15,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
 
     plugin.trial = function(display_element, trial) {
         display_element.append("<p id='imagetouse' style='display: none;'>" + trial.img + "</p>");
+        display_element.append("<p id='prompttouse' style='display: none;'>" + trial.prompt + "</p>");
         display_element.append(trial.template);
         display_element.i18n();
 

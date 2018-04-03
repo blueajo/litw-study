@@ -2,6 +2,7 @@
 <div>
 <canvas id="myCanvas" width="800" height="550">
 </canvas>
+<p id="prompt"></p>
 </div>
 <!--
 <div>
@@ -10,6 +11,7 @@
 <script>
 	$(document).ready(function() {
 		var clickedOn = false;
+		document.getElementById("prompt").innerHTML = document.getElementById("prompttouse").innerHTML;
 		var context = document.getElementById('myCanvas').getContext("2d");
 		var img = new Image();
 		var x = -100;
@@ -34,8 +36,6 @@
 				y = newY;
 				context.closePath();
 			} else {
-
-
 				context.beginPath();
 				context.clearRect(0,0, img.width * 0.78, img.height * 0.75);
 				context.closePath();
