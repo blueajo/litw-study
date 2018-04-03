@@ -77,12 +77,10 @@ var loImgsB2 = randomNum(1, "lo")
 var mdImgsB2 = randomNum(1, "md")
 var hiImgsB2 = randomNum(1, "hi")
 
-var partA1imgs = loImgsA.slice(0, 2).concat(mdImgsA.slice(0, 2), hiImgsA.slice(0, 2));
-var partA2imgs = loImgsA.slice(2, 4).concat(mdImgsA.slice(2, 4), hiImgsA.slice(2, 4));
+var partA1imgs = loImgsA.slice(0, 4).concat(mdImgsA.slice(0, 4), hiImgsA.slice(0, 4));
 var partB1imgs = loImgsB1.slice(0, 1).concat(mdImgsB1.slice(0, 1), hiImgsB1.slice(0, 1));
 var partB2imgs = loImgsB2.slice(0, 1).concat(mdImgsB2.slice(0, 1), hiImgsB2.slice(0, 1)); // change this
 shuffle(partA1imgs);
-shuffle(partA2imgs);
 shuffle(partB1imgs);
 shuffle(partB2imgs);
 
@@ -209,12 +207,10 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"]
       },
-   ],
-   "trialUsability": [
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[0] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[6] + ".png"]
       },
       {
         "type": "button-response",
@@ -229,7 +225,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[1] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[7] + ".png"]
       },
       {
         "type": "button-response",
@@ -244,7 +240,7 @@ module.exports = {
             {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[2] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[8] + ".png"]
       },
       {
         "type": "button-response",
@@ -259,7 +255,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[3] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[9] + ".png"]
       },
       {
         "type": "button-response",
@@ -274,7 +270,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[4] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[10] + ".png"]
       },
       {
         "type": "button-response",
@@ -289,7 +285,7 @@ module.exports = {
       {
         "type": "animation",
         "frame_time": 500,
-        "stimuli": ["img/stim-img/A/" + partA2imgs[5] + ".png"]
+        "stimuli": ["img/stim-img/A/" + partA1imgs[11] + ".png"]
       },
       {
         "type": "button-response",

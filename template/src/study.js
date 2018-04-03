@@ -101,8 +101,6 @@ module.exports = (function() {
 
    initJsPsych = function() {
 
-     /*
-
       // ******* BEGIN STUDY PROGRESSION ******** //
       // 1. GENERAL INSTRUCTIONS PAGE
       timeline.push({
@@ -190,50 +188,6 @@ module.exports = (function() {
             func: submitData
          });
       });
-
-      // INSTRUCTIONS PAGE
-      timeline.push({
-         type: "call-function",
-         func: function() {
-            params.currentProgress = 0;
-            $("#progress-header").hide();
-            LITW.utils.showSlide("instructions");
-         }
-      });
-      timeline.push({
-         type: "display-slide",
-            display_element: $("#instructions"),
-         name: "instructions",
-            template: instructions2Template({withTouch: window.litwWithTouch})
-      });
-
-      // 6. TRIAL STIMS, PHASE 2
-      params.stimU.forEach(function(stim, index) {
-
-         // record tracking information
-         timeline.push({
-            type: "call-function",
-            func: function() {
-               $("#progress-header").html(progressTemplate({
-                  msg: C.progressMsg,
-                  progress: Math.ceil((++params.currentProgress)/2),
-                  total: params.stimU.length/2
-               }))
-               .show();
-
-               LITW.utils.showSlide("trials");
-            }
-         });
-
-         timeline.push(stim);
-
-         // register a function to submit data as soon
-         // as this trial is completed
-         timeline.push({
-            type: "call-function",
-            func: submitData
-         });
-      }); */
 
       /* PART 2: SEARCHING AND MEMORIZATION TASK STARTS HERE */
 
@@ -518,7 +472,6 @@ module.exports = (function() {
       // trials and the real trials
       params.practiceStimsA = C.practiceRating;
       params.stimC = C.trialComplexity;
-      params.stimU = C.trialUsability;
       params.practiceStimsB1 = C.practiceTaskB1;
       params.stimB1 = C.trialTasksB1;
       params.practiceStimsB2 = C.practiceTaskB2;
@@ -526,7 +479,7 @@ module.exports = (function() {
 
       LITW.utils.showSlide("img-loading");
 
-      var allstims = params.practiceStimsA.concat(params.stimC).concat(params.stimU).concat(params.practiceStimsB1).concat(params.stimB1).concat(params.practiceStimsB2).concat(params.stimB2);
+      var allstims = params.practiceStimsA.concat(params.stimC).concat(params.practiceStimsB1).concat(params.stimB1).concat(params.practiceStimsB2).concat(params.stimB2);
 
       // preload images
       jsPsych.pluginAPI.preloadImages(allstims,
@@ -543,7 +496,7 @@ module.exports = (function() {
             $("#img-loading").html(loadingTemplate({
                msg: C.loadingMsg,
                numLoaded: numLoaded,
-               total: params.practiceStimsA.length + params.stimC.length + params.stimU.length + params.practiceStimsB1.length + params.stimB1.length + params.practiceStimsB2.length + params.stimB2.length
+               total: params.practiceStimsA.length + params.stimC.length + params.practiceStimsB1.length + params.stimB1.length + params.practiceStimsB2.length + params.stimB2.length
             }));
          }
       );
