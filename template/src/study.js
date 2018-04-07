@@ -219,8 +219,8 @@ module.exports = (function() {
               func: function() {
                   $("#progress-header").html(progressTemplate({
                       msg: C.progressMsg,
-                      progress: Math.ceil((++params.currentProgress)/3),
-                      total: params.practiceStimsB1.length/3
+                      progress: Math.ceil((++params.currentProgress)/4),
+                      total: params.practiceStimsB1.length/4
                   }))
                       .show();
 
@@ -265,8 +265,8 @@ module.exports = (function() {
               func: function() {
                   $("#progress-header").html(progressTemplate({
                       msg: C.progressMsg,
-                      progress: Math.ceil((++params.currentProgress)/3),
-                      total: params.stimB1.length/3
+                      progress: Math.ceil((++params.currentProgress)/4),
+                      total: params.stimB1.length/4
                   }))
                       .show();
 
@@ -311,8 +311,8 @@ module.exports = (function() {
                 func: function() {
                     $("#progress-header").html(progressTemplate({
                         msg: C.progressMsg,
-                        progress: Math.ceil((++params.currentProgress)/4),
-                        total: params.practiceStimsB2.length/4
+                        progress: Math.ceil((++params.currentProgress)/5),
+                        total: params.practiceStimsB2.length/5
                     }))
                         .show();
 
@@ -359,8 +359,8 @@ module.exports = (function() {
                 func: function() {
                     $("#progress-header").html(progressTemplate({
                         msg: C.progressMsg,
-                        progress: Math.ceil((++params.currentProgress)/4),
-                        total: params.stimB2.length/4
+                        progress: Math.ceil((++params.currentProgress)/5),
+                        total: params.stimB2.length/5
                     }))
                         .show();
 
