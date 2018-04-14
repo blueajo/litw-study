@@ -134,7 +134,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       }
    ],
    "trialComplexity": [
@@ -151,7 +152,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -166,7 +168,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -181,7 +184,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -196,7 +200,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -211,7 +216,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -226,7 +232,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -241,7 +248,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -256,7 +264,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
             {
         "type": "animation",
@@ -271,7 +280,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -286,7 +296,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -301,7 +312,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -316,7 +328,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
-        "<button class='jspsych-btn' disabled>Very appealing</button>"]
+        "<button class='jspsych-btn' disabled>Very appealing</button>"],
+        "class": "rating-buttons"
       }
    ],
    "practiceTaskB1": [

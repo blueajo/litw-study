@@ -21,6 +21,7 @@ jsPsych.plugins["button-response"] = (function() {
     trial.timing_response = trial.timing_response || -1; // if -1, then wait for response forever
     trial.is_html = (typeof trial.is_html === 'undefined') ? false : trial.is_html;
     trial.prompt = (typeof trial.prompt === 'undefined') ? "" : trial.prompt;
+    trial.class = (typeof trial.class == 'undefined') ? "jspsych-button-response-button" : trial.class;
 
     // if any trial variables are functions
     // this evaluates the function and replaces
@@ -63,7 +64,7 @@ jsPsych.plugins["button-response"] = (function() {
     for (var i = 0; i < trial.choices.length; i++) {
       var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
       $('#jspsych-button-response-btngroup').append(
-        $(str).attr('id', 'jspsych-button-response-button-' + i).data('choice', i).addClass('jspsych-button-response-button').on('click', function(e) {
+        $(str).attr('id', 'jspsych-button-response-button-' + i).data('choice', i).addClass(trial.class).on('click', function(e) {
           var choice = $('#' + this.id).data('choice');
           after_response(choice);
         })
