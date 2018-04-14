@@ -4,10 +4,7 @@
 <canvas id="myCanvas" width="800" height="550">
 </canvas>
 </div>
-<!--
-<div>
-	<img src="img/stim-img/mediumPartB.png"/>
-</div>. -->
+
 <script>
 	$(document).ready(function() {
 		var clickedOn = false;
@@ -21,24 +18,5 @@
 		img.onload = function() {
 			context.drawImage(img, 0, 0, img.width * 0.78, img.height * 0.75);
 		}
-		$("#myCanvas").click(function(e) {
-			var offset = $(this).offset();
-			newX = e.pageX - offset.left;
-			newY = e.pageY - offset.top;
-			context.beginPath();
-			context.arc(newX, newY, 25, 0, 2 * Math.PI);
-			context.stroke();
-			context.fillStyle = "red";
-			context.fill();
-			clickedOn = true;
-			x = newX;
-			y = newY;
-			context.closePath();
-			point["x"] = x;
-			point["y"] = y;
-			//study.submitData(point);
-		})
-
-
 	});
 </script>

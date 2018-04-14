@@ -18,14 +18,26 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.append("<p id='prompttouse' style='display: none;'>" + trial.prompt + "</p>");
         display_element.append(trial.template);
         display_element.i18n();
-
-        display_element.find("canvas").click(function() {
-            console.log("Hello from search ")
+        var point = {};
+        display_element.find("canvas").click(function(e) {
+            var canvas = $("#myCanvas")[0];
+            var context = canvas.getContext("2d");
+            var offset = display_element.offset();
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            context.beginPath();
+            context.arc(x, y, 25, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle = "red";
+            context.fill();
+            context.closePath();
+            point["x"] = x;
+            point["y"] = y;
             if(trial.finish)  {
                 trial.finish();
             }
             display_element.empty();
-            jsPsych.finishTrial();
+            jsPsych.finishTrial(point);
         });
 
         LITW.utils.showSlide(display_element[0].id);
