@@ -1,0 +1,6 @@
+[
+  {"title":"Overall","subtitle":"In seconds","ranges":[10, 20],"measures":[5],"markers":[5]},
+  {"title":"Low Complexity Websites","subtitle":"In seconds","ranges":[10, 20],"measures":[5],"markers":[5]},
+  {"title":"Medium Complexity Websites","subtitle":"In seconds","ranges":[10, 20],"measures":[5],"markers":[5]},
+  {"title":"High Complexity Websites","subtitle":"In seconds","ranges":[10, 20],"measures":[5],"markers":[5]}
+]
