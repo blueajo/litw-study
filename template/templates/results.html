@@ -1,6 +1,6 @@
 <style>
 .bullet { font: 10px sans-serif; }
-.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .marker { stroke: #000; stroke-width: 0px; }
 .bullet .tick line { stroke: #666; stroke-width: .5px; }
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #ddd; }
@@ -32,8 +32,25 @@
 
 <script>
 
-var margin = {top: 5, right: 40, bottom: 20, left: 120},
-    width = 960 - margin.left - margin.right,
+function setvalues(d) {
+	if(d.title == "Overall") {
+		d.ranges = [4];
+	  d.measures = [2];
+	} else if(d.title == "Low Complexity Websites") {
+		d.ranges = [4];
+		d.measures = [1];
+	} else if(d.title == "Medium Complexity Websites") {
+		d.ranges = [5];
+		d.measures = [5];
+	} else {
+		d.ranges = [6];
+		d.measures = [7];
+	}
+  return d;
+}
+
+var margin = {top: 5, right: 10, bottom: 20, left: 210},
+    width = 800 - margin.left - margin.right,
     height = 50 - margin.top - margin.bottom;
 
 var chart = d3.bullet()
@@ -65,6 +82,8 @@ d3.json("/templates/bullets.json", function(error, data) {
       .attr("class", "subtitle")
       .attr("dy", "1em")
       .text(function(d) { return d.subtitle; });
+
+	svg.datum(setvalues).call(chart.duration(1000));
 });
 
 </script>
