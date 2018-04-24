@@ -769,11 +769,10 @@ module.exports = {
    "progressMsg": "Progress:",
    "results": {
       "header": "Have a look at your results!",
-      "predictionMsg": "Based on your responses, we think you might like to take this cat home!",
-      "predictionMsgBoth": "Based on your responses, we think you might like to take both these cats home!"
+      "predictionMsg1": ""
    },
-   "resultsExplanation": ["The task you completed in this study is one measure of cat preference [1]. We determined your cat preference based on the set of features exhibited by the cats you chose, such as posture.", "We are interested in learning whether cat preferences are consistent across cultures. We will report on this result on our blog."],
-   "citations": ["[1] Buttons, C.W., Patches, R.A. (2012). Evaluation of a method for determining cat preference: the cat selection task. Journal of Cats: Applied, 8:2, 75-84."]
+   "resultsExplanation": ["We calculated your web performance score based on how long it took you to complete the tasks given to you in the task-completion part of the experiment. Your performance compared to the average performance for all participants is shown in the graphs below.", "Note that we do not do many search tasks per participant. As a result, don’t worry if your results are below what you expected - they might have just been skewed due to small sample size."],
+   "citations": ["If your performance varied across websites of different complexities, it might be because you are a holistic or analytic thinker! People from eastern, holistic-thinking cultures tend to prefer higher visual complexity than those from western, analytic-thinking cultures, who prefer visually simpler websites [1].", "While performance on websites of varying complexities has not been directly linked to holistic and analytic thinking styles, we hypothesize that they are linked.", "[1] Reinecke, K., Gajos, K.Z. (2014). Quantifying visual preferences around the world. CHI 2014."]
 };
 
 function isElement() {
