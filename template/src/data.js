@@ -53,7 +53,6 @@ function getPrompt(selection, section, part) {
   // parse prompt to get
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
-  console.log(selection);
 
   var prompt = "";
 
@@ -102,7 +101,7 @@ var hiPromptsB2 = [{prompt: "The next website is the front page of a local news 
 
 
 var loBoundaries = [[372, 383, 211, 264],
-                    [70, 91, 266, 353]];
+                    [41, 55, 290, 348]];
 
 var mdBoundaries = [[9, 23, 690, 773],
                   [172, 188, 46, 187]];
