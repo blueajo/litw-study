@@ -17,6 +17,8 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.append("<p id='imagetouse' style='display: none;'>" + trial.img + "</p>");
         display_element.append("<p id='prompttouse' style='display: none;'>" + trial.prompt + "</p>");
         display_element.append(trial.template);
+        display_element.append("<p id='errorMessage' style='color: red; display: none;'"
+            +"<b>You have clicked wrongly.  Please try again.</b></p>")
         var topY = trial.boundaries[0];
         var bottomY = trials.boundaries[1];
         var leftX = trials.boundaries[2];
@@ -24,19 +26,19 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.i18n();
         var point = {};
         display_element.find("canvas").click(function(e) {
-            var canvas = $("#myCanvas")[0];
+            /*var canvas = $("#myCanvas")[0];
             var context = canvas.getContext("2d");
-            var offset = display_element.offset();
+            var offset = display_element.offset();*/
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
-            context.beginPath();
+            /*context.beginPath();
             context.arc(x, y, 25, 0, 2 * Math.PI);
             context.stroke();
             context.fillStyle = "red";
             context.fill();
             context.closePath();
             point["x"] = x;
-            point["y"] = y;
+            point["y"] = y;*/
             if ((x >= leftX && x <= rightX) &&
                 (y >= topY && y <= bottomY)) {
                 if(trial.finish)  {
@@ -45,7 +47,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
                 display_element.empty();
                 jsPsych.finishTrial(point);
             } else {
-                // temp holder
+                $("#errorMessage").show();
                 console.log("Invalid clicking");
             }
         });
