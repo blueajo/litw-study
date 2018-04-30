@@ -20,7 +20,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.append(trial.template);
         display_element.append("<p id='errorMessage' style='color: red; display: none;'"
             +"<b>You have clicked wrongly.  Please try again.</b></p>")
-        var topY = trial.boundaries[0];
+        var topY = trials.boundaries[0];
         var bottomY = trials.boundaries[1];
         var leftX = trials.boundaries[2];
         var rightX = trials.boundaries[3];
@@ -28,6 +28,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         var point = {};
         var wrongAttempts = 0;
         display_element.find("canvas").click(function(e) {
+            var offset = $(this).offset;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             point["x"] = x;

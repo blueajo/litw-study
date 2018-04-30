@@ -35,6 +35,20 @@ function shuffle(a) {
     }
 }
 
+function getBoundaries(selection) {
+  // parse prompt to get
+  var complexity = selection.charAt(0);
+  var idx = parseInt(selection.charAt(3));
+
+  if(complexity == "l") {
+    return loBoundaries[idx];
+  } else if (complexity == "m") {
+    return mdBoundaries[idx];
+  } else {
+    return hiBoundaries[idx];
+  }
+}
+
 function getPrompt(selection, section, part) {
   // parse prompt to get
   var complexity = selection.charAt(0);
@@ -390,7 +404,8 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
-        "prompt": getPrompt(partB1imgs[0], "B1", "part")
+        "prompt": getPrompt(partB1imgs[0], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[0])
 		 },
      {
        "type": "button-response",
@@ -419,7 +434,8 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
-        "prompt": getPrompt(partB1imgs[1], "B1", "part")
+        "prompt": getPrompt(partB1imgs[1], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[1])
 		 },
      {
        "type": "button-response",
@@ -448,7 +464,8 @@ module.exports = {
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
-       "prompt": getPrompt(partB1imgs[2], "B1", "part")
+       "prompt": getPrompt(partB1imgs[2], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[2])
 		 },
      {
        "type": "button-response",
@@ -477,7 +494,8 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[3] + "img.png",
-        "prompt": getPrompt(partB1imgs[3], "B1", "part")
+        "prompt": getPrompt(partB1imgs[3], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[3])
     },
     {
       "type": "button-response",
@@ -506,7 +524,8 @@ module.exports = {
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[4] + "img.png",
-        "prompt": getPrompt(partB1imgs[4], "B1", "part")
+        "prompt": getPrompt(partB1imgs[4], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[4])
     },
     {
       "type": "button-response",
@@ -535,7 +554,8 @@ module.exports = {
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[5] + "img.png",
-       "prompt": getPrompt(partB1imgs[5], "B1", "part")
+       "prompt": getPrompt(partB1imgs[5], "B1", "part"),
+        "boundaries": getBoundaries(partB1imgs[5])
     },
     {
       "type": "button-response",
