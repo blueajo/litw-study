@@ -86,6 +86,15 @@ var mdPromptsB2 = [{prompt: "The next website is a hub for downloading free soft
 var hiPromptsB2 = [{prompt: "The next website is the front page of a local news site.", task: "What day are the most recent articles from?"},
                    {prompt: "The next website is the front page of a local news site.", task: "Who is the Berkeley Chancellor as reported on the news site?"}];
 
+
+var loBoundaries[[321, 370, 130, 293],
+                  [70, 91, 266, 353]];
+
+var mdBoundaries[[38, 57, 684, 776],
+                  [203, 220, 46, 187]];
+
+var hiBoundaries[[321, 370, 130, 293],
+                  [278, 353, 561, 651]];
 /*
 boundaries: [topY, bottomY, leftX, rightX]
 
