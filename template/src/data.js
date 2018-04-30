@@ -86,6 +86,22 @@ var mdPromptsB2 = [{prompt: "The next website is a hub for downloading free soft
 var hiPromptsB2 = [{prompt: "The next website is the front page of a local news site.", task: "What day are the most recent articles from?"},
                    {prompt: "The next website is the front page of a local news site.", task: "Who is the Berkeley Chancellor as reported on the news site?"}];
 
+/*
+boundaries: [topY, bottomY, leftX, rightX]
+
+low:
+  edline: [321, 370, 130, 293]
+  wix: [70, 91, 266, 353]
+
+medium:
+  ryman: [203, 220, 46, 187]
+  ascentive: [38,57,684,776]
+  
+high:
+  quiz selector: [321, 370, 130, 293]
+  bling cheese: [278,353,561,651]
+*/
+
 var loImgsA = numArray(4, "lo")
 var mdImgsA = numArray(4, "md")
 var hiImgsA = numArray(4, "hi")
