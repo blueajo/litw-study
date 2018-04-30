@@ -14,6 +14,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
     var plugin = {};
 
     plugin.trial = function(display_element, trial) {
+        var start_time = Date.now();
         display_element.append("<p id='imagetouse' style='display: none;'>" + trial.img + "</p>");
         display_element.append("<p id='prompttouse' style='display: none;'>" + trial.prompt + "</p>");
         display_element.append(trial.template);
@@ -25,30 +26,29 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         var rightX = trials.boundaries[3];
         display_element.i18n();
         var point = {};
+        var wrongAttempts = 0;
         display_element.find("canvas").click(function(e) {
-            /*var canvas = $("#myCanvas")[0];
-            var context = canvas.getContext("2d");
-            var offset = display_element.offset();*/
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
-            /*context.beginPath();
-            context.arc(x, y, 25, 0, 2 * Math.PI);
-            context.stroke();
-            context.fillStyle = "red";
-            context.fill();
-            context.closePath();
             point["x"] = x;
-            point["y"] = y;*/
+            point["y"] = y;
             if ((x >= leftX && x <= rightX) &&
                 (y >= topY && y <= bottomY)) {
+                var response_time = (Date.now() - start_time) / 1000;
                 if(trial.finish)  {
                     trial.finish();
                 }
+
+                var trial_data = {
+                    "wrong": wrongAttempts,
+                    "point": point,
+                    "time": response_time
+                };
                 display_element.empty();
-                jsPsych.finishTrial(point);
+                jsPsych.finishTrial(trial_data);
             } else {
                 $("#errorMessage").show();
-                console.log("Invalid clicking");
+                wrongAttempts++;
             }
         });
 
