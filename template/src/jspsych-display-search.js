@@ -17,6 +17,10 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         display_element.append("<p id='imagetouse' style='display: none;'>" + trial.img + "</p>");
         display_element.append("<p id='prompttouse' style='display: none;'>" + trial.prompt + "</p>");
         display_element.append(trial.template);
+        var topY = trial.boundaries[0];
+        var bottomY = trials.boundaries[1];
+        var leftX = trials.boundaries[2];
+        var rightX = trials.boundaries[3];
         display_element.i18n();
         var point = {};
         display_element.find("canvas").click(function(e) {
@@ -33,11 +37,17 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
             context.closePath();
             point["x"] = x;
             point["y"] = y;
-            if(trial.finish)  {
-                trial.finish();
+            if ((x >= leftX && x <= rightX) &&
+                (y >= topY && y <= bottomY)) {
+                if(trial.finish)  {
+                    trial.finish();
+                }
+                display_element.empty();
+                jsPsych.finishTrial(point);
+            } else {
+                // temp holder
+                console.log("Invalid clicking");
             }
-            display_element.empty();
-            jsPsych.finishTrial(point);
         });
 
         LITW.utils.showSlide(display_element[0].id);

@@ -345,7 +345,8 @@ module.exports = {
       "name": "part2searching1",
       "template": part2searching1Template({withTouch: window.litwWithTouch}),
       "img": "img/stim-img/B1/trialimg.png",
-      "prompt": "Click on the Beach Travel Guide."
+      "prompt": "Click on the Beach Travel Guide.",
+      "boundaries": [254, 280, 509, 777]
     },
     {
       "type": "button-response",
