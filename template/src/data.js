@@ -87,28 +87,16 @@ var hiPromptsB2 = [{prompt: "The next website is the front page of a local news 
                    {prompt: "The next website is the front page of a local news site.", task: "Who is the Berkeley Chancellor as reported on the news site?"}];
 
 
-var loBoundaries[[321, 370, 130, 293],
+var loBoundaries[[372, 383, 211, 264],
                   [70, 91, 266, 353]];
 
-var mdBoundaries[[38, 57, 684, 776],
-                  [203, 220, 46, 187]];
+var mdBoundaries[[9, 23, 690, 773],
+                  [172, 188, 46, 187]];
 
-var hiBoundaries[[321, 370, 130, 293],
-                  [278, 353, 561, 651]];
+var hiBoundaries[[289, 339, 139, 281],
+                  [248, 320, 561, 651]];
 /*
 boundaries: [topY, bottomY, leftX, rightX]
-
-low:
-  edline: [321, 370, 130, 293]
-  wix: [70, 91, 266, 353]
-
-medium:
-  ryman: [203, 220, 46, 187]
-  ascentive: [38,57,684,776]
-  
-high:
-  quiz selector: [321, 370, 130, 293]
-  bling cheese: [278,353,561,651]
 */
 
 var loImgsA = numArray(4, "lo")
@@ -371,7 +359,7 @@ module.exports = {
       "template": part2searching1Template({withTouch: window.litwWithTouch}),
       "img": "img/stim-img/B1/trialimg.png",
       "prompt": "Click on the Beach Travel Guide.",
-      "boundaries": [254, 280, 509, 777]
+      "boundaries": [226, 285, 509, 777]
     },
     {
       "type": "button-response",
