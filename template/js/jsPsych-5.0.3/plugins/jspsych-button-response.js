@@ -37,7 +37,8 @@ jsPsych.plugins["button-response"] = (function() {
       display_element.append($('<img>', {
         src: trial.stimulus,
         id: 'jspsych-button-response-stimulus',
-        class: 'block-center'
+        class: 'block-center',
+        style: 'max-width: 500px; max-height: 300px; height: auto; width: auto;'
       }));
     } else {
       display_element.append($('<div>', {
