@@ -101,13 +101,13 @@ var hiPromptsB2 = [{prompt: "The next website is the front page of a local news 
                    {prompt: "The next website is the front page of a local news site.", task: "Who is the Berkeley Chancellor as reported on the news site?"}];
 
 
-var loBoundaries[[372, 383, 211, 264],
-                  [70, 91, 266, 353]];
+var loBoundaries = [[372, 383, 211, 264],
+                    [70, 91, 266, 353]];
 
-var mdBoundaries[[9, 23, 690, 773],
+var mdBoundaries = [[9, 23, 690, 773],
                   [172, 188, 46, 187]];
 
-var hiBoundaries[[289, 339, 139, 281],
+var hiBoundaries = [[289, 339, 139, 281],
                   [248, 320, 561, 651]];
 /*
 boundaries: [topY, bottomY, leftX, rightX]
