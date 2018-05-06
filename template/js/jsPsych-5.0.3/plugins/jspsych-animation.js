@@ -115,7 +115,7 @@ jsPsych.plugins.animation = (function() {
         "responses": JSON.stringify(responses)
       };
 
-      jsPsych.finishTrial(trial_data);
+      jsPsych.finishTrial();
     }
   };
 
