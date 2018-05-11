@@ -15,6 +15,7 @@
 require("../js/jsPsych-5.0.3/plugins/jspsych-animation");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response-2");
+require("../js/jsPsych-5.0.3/plugins/jspsych-button-response-3");
 var part2searching1Template = require("../templates/part2searching1.html");
 
 // generates an array of numbers 0 (inclusive) through max (noninclusive)
@@ -48,10 +49,6 @@ function getBoundaries(selection) {
   } else {
     return hiBoundaries[idx];
   }
-}
-
-function getComplexity(selection) {
-  return selection.charAt(0);
 }
 
 function getPrompt(selection, section, part) {
@@ -184,8 +181,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[0])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -201,8 +197,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[1])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -218,8 +213,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[2])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -235,8 +229,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[3])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -252,8 +245,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[4])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -269,8 +261,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[5])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -286,8 +277,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[6])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -303,8 +293,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[7])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -320,8 +309,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[8])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -337,8 +325,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[9])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -354,8 +341,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[10])
+        "class": "rating-buttons"
       },
       {
         "type": "animation",
@@ -371,8 +357,7 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons",
-        "complexity": getComplexity(partA1imgs[11])
+        "class": "rating-buttons"
       }
    ],
    "practiceTaskB1": [
@@ -421,8 +406,7 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
         "prompt": getPrompt(partB1imgs[0], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[0]),
-        "complexity": getComplexity(partB1imgs[0])
+        "boundaries": getBoundaries(partB1imgs[0])
      },
      {
        "type": "button-response-2",
@@ -452,8 +436,7 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
         "prompt": getPrompt(partB1imgs[1], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[1]),
-        "complexity": getComplexity(partB1imgs[1])
+        "boundaries": getBoundaries(partB1imgs[1])
      },
      {
        "type": "button-response-2",
@@ -483,8 +466,7 @@ module.exports = {
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
        "prompt": getPrompt(partB1imgs[2], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[2]),
-        "complexity": getComplexity(partB1imgs[2])
+        "boundaries": getBoundaries(partB1imgs[2])
      },
      {
        "type": "button-response-2",
@@ -514,8 +496,7 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[3] + "img.png",
         "prompt": getPrompt(partB1imgs[3], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[3]),
-        "complexity": getComplexity(partB1imgs[3])
+        "boundaries": getBoundaries(partB1imgs[3])
     },
     {
       "type": "button-response-2",
@@ -545,8 +526,7 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[4] + "img.png",
         "prompt": getPrompt(partB1imgs[4], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[4]),
-        "complexity": getComplexity(partB1imgs[4])
+        "boundaries": getBoundaries(partB1imgs[4])
     },
     {
       "type": "button-response-2",
@@ -576,8 +556,7 @@ module.exports = {
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[5] + "img.png",
        "prompt": getPrompt(partB1imgs[5], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[5]),
-        "complexity": getComplexity(partB1imgs[5])
+        "boundaries": getBoundaries(partB1imgs[5])
     },
     {
       "type": "button-response-2",
