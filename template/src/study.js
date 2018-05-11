@@ -34,6 +34,8 @@ require("./jspsych-display-info");
 require("./jspsych-display-slide");
 require("./jspsych-display-search");
 require("./jspsych-survey-text");
+require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
+require("../js/jsPsych-5.0.3/plugins/jspsych-button-response-2");
 
 var LITW_STUDY_CONTENT = require("./data");
 
@@ -100,7 +102,7 @@ module.exports = (function() {
    },
 
    initJsPsych = function() {
-
+     /*
 
       // ******* BEGIN STUDY PROGRESSION ******** //
       // 1. GENERAL INSTRUCTIONS PAGE
@@ -192,8 +194,9 @@ module.exports = (function() {
 
       /* PART 2: SEARCHING AND MEMORIZATION TASK STARTS HERE */
 
-      // Part 1: Search and memorization
 
+      // Part 1: Search and memorization
+/*
       // INSTRUCTIONS PAGE
       timeline.push({
          type: "call-function",
@@ -283,8 +286,9 @@ module.exports = (function() {
               func: submitData
           });
       });
-
+*/
       /* PART 2b: INTERACTION AND MEMORIZATION TASK STARTS HERE*/
+
 
       // INSTRUCTIONS PAGE
       timeline.push({
@@ -378,11 +382,14 @@ module.exports = (function() {
             });
         });
 
+
+
       // ******* END STUDY PROGRESSION ******** //
    },
 
    submitData = function() {
       LITW.data.submitStudyData(jsPsych.data.getLastTrialData());
+      console.log(jsPsych.data.getLastTimelineData())
    },
 
    startTrials = function(demographicsData) {
@@ -409,38 +416,43 @@ module.exports = (function() {
       LITW.data.submitComments(commentsData);
 
       // get the trial data from jsPsych
-      var studyData = jsPsych.data.getTrialsOfType("single-stim"),
-      whichCat;
+      var studyData0 = jsPsych.data.getTrialsOfType("button-response"),
+      studyData1 = jsPsych.data.getTrialsOfType("display-search"),
+      studyData2 = jsPsych.data.getTrialsOfType(""),
+      studyData3 = jsPsych.data.getTrialsOfType(""),
+      studyData4 = jsPsych.data.getTrialsOfType("button-response-2"),
+      loTime = 0, mdTime = 0, hiTime = 0;
+
+      console.log(studyData1);
 
       // strip out the data generated from the practice trial
-      studyData.splice(0, params.practiceStims.length);
+      studyData1.splice(0, 1);
 
-      var numNiceCats = studyData.filter(function(item) {
+      console.log(studyData1);
 
-         // the nice cats are always on the right!
-         return item.key_press === 50;
-      }).length;
-      var numMeanCats = studyData.filter(function(item) {
+      studyData1.filter(function(item) {
+        console.log(item.complexity);
+        if(item.complexity === "l") {
+          loTime = loTime + item.time + item.wrong;
+        } else if(item.complexity === "m") {
+          mdTime = mdTime + item.time + item.wrong;
+        } else {
+          hiTime = hiTime + item.time + item.wrong;
+        }
+      });
 
-         // the mean cats are always on the left!
-         return item.key_press === 49;
-      }).length;
-
-      if (numNiceCats === numMeanCats) {
-         whichCat = ["cat-nice.jpg", "cat-mean.jpg"];
-      } else {
-         whichCat = (numNiceCats > numMeanCats) ?
-            ["cat-nice.jpg"] :
-            ["cat-mean.jpg"];
-      }
+      console.log("Calculations");
+      console.log(loTime);
+      console.log(mdTime);
+      console.log(hiTime);
 
       LITW.utils.showSlide("results");
       $("#results").html(resultsTemplate({
          content: C.results,
          resultsExplanation: C.resultsExplanation,
          citations: C.citations,
-         whichCat: whichCat,
-         bothCats: (whichCat.length === 2)
+         whichCat: false,
+         bothCats: false
       }));
 
       LITW.results.insertFooter();
@@ -471,7 +483,7 @@ module.exports = (function() {
 
       // Load the trial configuration data for the practice
       // trials and the real trials
-      params.practiceStimsA = C.practiceRating;
+      params.practiceStimsC = C.practiceRating;
       params.stimC = C.trialComplexity;
       params.practiceStimsB1 = C.practiceTaskB1;
       params.stimB1 = C.trialTasksB1;
@@ -480,7 +492,7 @@ module.exports = (function() {
 
       LITW.utils.showSlide("img-loading");
 
-      var allstims = params.practiceStimsA.concat(params.stimC).concat(params.practiceStimsB1).concat(params.stimB1).concat(params.practiceStimsB2).concat(params.stimB2);
+      var allstims = params.practiceStimsC.concat(params.stimC).concat(params.practiceStimsB1).concat(params.stimB1).concat(params.practiceStimsB2).concat(params.stimB2);
 
       // preload images
       jsPsych.pluginAPI.preloadImages(allstims,
@@ -497,7 +509,7 @@ module.exports = (function() {
             $("#img-loading").html(loadingTemplate({
                msg: C.loadingMsg,
                numLoaded: numLoaded,
-               total: params.practiceStimsA.length + params.stimC.length + params.practiceStimsB1.length + params.stimB1.length + params.practiceStimsB2.length + params.stimB2.length
+               total: params.practiceStimsC.length + params.stimC.length + params.practiceStimsB1.length + params.stimB1.length + params.practiceStimsB2.length + params.stimB2.length
             }));
          }
       );

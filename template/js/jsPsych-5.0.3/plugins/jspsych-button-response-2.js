@@ -8,7 +8,7 @@
  *
  **/
 
-jsPsych.plugins["button-response"] = (function() {
+jsPsych.plugins["button-response-2"] = (function() {
 
   var plugin = {};
 

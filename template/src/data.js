@@ -50,6 +50,10 @@ function getBoundaries(selection) {
   }
 }
 
+function getComplexity(selection) {
+  return selection.charAt(0);
+}
+
 function getPrompt(selection, section, part) {
   // parse prompt to get
   var complexity = selection.charAt(0);
@@ -180,7 +184,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[0])
       },
       {
         "type": "animation",
@@ -196,7 +201,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[1])
       },
       {
         "type": "animation",
@@ -212,7 +218,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[2])
       },
       {
         "type": "animation",
@@ -228,7 +235,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[3])
       },
       {
         "type": "animation",
@@ -244,7 +252,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[4])
       },
       {
         "type": "animation",
@@ -260,7 +269,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[5])
       },
       {
         "type": "animation",
@@ -276,7 +286,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[6])
       },
       {
         "type": "animation",
@@ -292,7 +303,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[7])
       },
       {
         "type": "animation",
@@ -308,7 +320,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[8])
       },
       {
         "type": "animation",
@@ -324,7 +337,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[9])
       },
       {
         "type": "animation",
@@ -340,7 +354,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[10])
       },
       {
         "type": "animation",
@@ -356,7 +371,8 @@ module.exports = {
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>","<button class='jspsych-btn'></button>",
         "<button class='jspsych-btn' disabled>Very appealing</button>"],
-        "class": "rating-buttons"
+        "class": "rating-buttons",
+        "complexity": getComplexity(partA1imgs[11])
       }
    ],
    "practiceTaskB1": [
@@ -391,22 +407,23 @@ module.exports = {
     }
    ],
    "trialTasksB1": [
-		 // 1
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB1imgs[0], "B1", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
-		 {
-				"type": "display-search",
+     // 1
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB1imgs[0], "B1", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
+     {
+        "type": "display-search",
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[0] + "img.png",
         "prompt": getPrompt(partB1imgs[0], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[0])
-		 },
+        "boundaries": getBoundaries(partB1imgs[0]),
+        "complexity": getComplexity(partB1imgs[0])
+     },
      {
        "type": "button-response-2",
        "stimulus": "img/stim-img/B1/" + partB1imgs[0] + "icon0.png",
@@ -421,22 +438,23 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 2
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB1imgs[1], "B1", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
-		 {
+     // 2
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB1imgs[1], "B1", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
+     {
         "type": "display-search",
         "display_element": $("#trials"),
         "name": "part2searching1",
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[1] + "img.png",
         "prompt": getPrompt(partB1imgs[1], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[1])
-		 },
+        "boundaries": getBoundaries(partB1imgs[1]),
+        "complexity": getComplexity(partB1imgs[1])
+     },
      {
        "type": "button-response-2",
        "stimulus": "img/stim-img/B1/" + partB1imgs[1] + "icon0.png",
@@ -451,22 +469,23 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 3
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB1imgs[2], "B1", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
-		 {
+     // 3
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB1imgs[2], "B1", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
+     {
        "type": "display-search",
        "display_element": $("#trials"),
        "name": "part2searching1",
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[2] + "img.png",
        "prompt": getPrompt(partB1imgs[2], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[2])
-		 },
+        "boundaries": getBoundaries(partB1imgs[2]),
+        "complexity": getComplexity(partB1imgs[2])
+     },
      {
        "type": "button-response-2",
        "stimulus": "img/stim-img/B1/" + partB1imgs[2] + "icon0.png",
@@ -495,7 +514,8 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[3] + "img.png",
         "prompt": getPrompt(partB1imgs[3], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[3])
+        "boundaries": getBoundaries(partB1imgs[3]),
+        "complexity": getComplexity(partB1imgs[3])
     },
     {
       "type": "button-response-2",
@@ -525,7 +545,8 @@ module.exports = {
         "template": part2searching1Template({withTouch: window.litwWithTouch}),
         "img": "img/stim-img/B1/" + partB1imgs[4] + "img.png",
         "prompt": getPrompt(partB1imgs[4], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[4])
+        "boundaries": getBoundaries(partB1imgs[4]),
+        "complexity": getComplexity(partB1imgs[4])
     },
     {
       "type": "button-response-2",
@@ -555,7 +576,8 @@ module.exports = {
        "template": part2searching1Template({withTouch: window.litwWithTouch}),
        "img": "img/stim-img/B1/" + partB1imgs[5] + "img.png",
        "prompt": getPrompt(partB1imgs[5], "B1", "part"),
-        "boundaries": getBoundaries(partB1imgs[5])
+        "boundaries": getBoundaries(partB1imgs[5]),
+        "complexity": getComplexity(partB1imgs[5])
     },
     {
       "type": "button-response-2",
@@ -606,20 +628,20 @@ module.exports = {
     }
    ],
    "trialTasksB2": [
-		 // 1
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[0], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
-		 {
+     // 1
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[0], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
+     {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[0], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[0], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
@@ -638,20 +660,20 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 2
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[1], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
+     // 2
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[1], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
      {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[1], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[1], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
@@ -670,20 +692,20 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 3
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[2], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
+     // 3
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[2], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
      {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[2], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[2], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
@@ -703,19 +725,19 @@ module.exports = {
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
      // 4
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[3], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
-		 {
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[3], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
+     {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[3], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[3], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
@@ -734,20 +756,20 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 5
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[4], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
+     // 5
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[4], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
      {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[4], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[4], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]
@@ -766,20 +788,20 @@ module.exports = {
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
        "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
      },
-		 // 6
-		 {
-				"type": "single-stim",
-				"is_html": true,
-				"prompt": getPrompt(partB2imgs[5], "B2", "whole"),
-				"choices": [32], // the numbers 1 - 2
-		 },
+     // 6
+     {
+        "type": "single-stim",
+        "is_html": true,
+        "prompt": getPrompt(partB2imgs[5], "B2", "whole"),
+        "choices": [32], // the numbers 1 - 2
+     },
      {
        "type": 'single-stim',
        "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "img.png",
        "choices": [32],
        "prompt": getPrompt(partB2imgs[5], "B2", "part"),
        "response_ends_trial": true
-		 },
+     },
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[5], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."]

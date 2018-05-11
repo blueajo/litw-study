@@ -25,6 +25,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
         var bottomY = trial.boundaries[1];
         var leftX = trial.boundaries[2];
         var rightX = trial.boundaries[3];
+        var complexity = (typeof trial.complexity ==='undefined') ? "" : trial.complexity;
         console.log("Top : " + topY);
         console.log("Bottom : " + bottomY);
         console.log("left : " + leftX);
@@ -50,7 +51,8 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
                 var trial_data = {
                     "wrong": wrongAttempts,
                     "point": point,
-                    "time": response_time
+                    "time": response_time,
+                    "complexity": complexity
                 };
                 display_element.empty();
                 jsPsych.finishTrial(trial_data);

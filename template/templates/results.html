@@ -2,19 +2,28 @@
 .bullet { font: 10px sans-serif; }
 .bullet .marker { stroke: #000; stroke-width: 0px; }
 .bullet .tick line { stroke: #666; stroke-width: .5px; }
-.bullet .range.s0 { fill: #eee; }
+.bullet .range.s0 { fill: lightsteelblue; }
 .bullet .range.s1 { fill: #ddd; }
 .bullet .range.s2 { fill: #ccc; }
-.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s0 { fill: #eee; }
 .bullet .measure.s1 { fill: steelblue; }
 .bullet .title { font-size: 14px; font-weight: bold; }
 .bullet .subtitle { fill: #999; }
+.key-color { display: inline-block; width: 20px; height: 20px; vertical-align: middle; margin-right: 10px; }
+.key-text { display: inline-block; vertical-align: middle; margin: 0; margin-right: 15px; height: 20px; font-size: 14px; font-weight: bold; }
+#key { display: block; }
+.key-container { margin: 5px; }
 </style>
 <script src="/templates/d3.v3.min.js"></script>
 <script src="/templates/bullet.js"></script>
 
 <!-- Template for the results page -->
-<h2 id="resultTitle" class="bolded-blue">You are an advanced internet user!</h2>
+
+{{#if bothCats}}
+	<h2 class="bolded-blue">You are an advanced internet user!</h2>
+{{else}}
+	<h2 class="bolded-blue">Here are your results!</h2>
+{{/if}}
 
 <div class="results-explanation">
 	{{#each resultsExplanation}}
@@ -22,6 +31,14 @@
 	{{/each}}
 </div>
 
+<div id="key">
+	<div class="key-container">
+		<div class="key-color" style="background-color: lightsteelblue;"></div><p class="key-text">Your results</p>
+	</div>
+	<div class="key-container">
+		<div class="key-color" style="background-color: #eee;"></div><p class="key-text">Average results for all participants</p>
+	</div>
+</div>
 <div id="viz" style="overflow: scroll;"></div>
 
 <div class="citations">
