@@ -34,8 +34,11 @@ require("./jspsych-display-info");
 require("./jspsych-display-slide");
 require("./jspsych-display-search");
 require("./jspsych-survey-text");
+require("./jspsych-single-stim-litw");
+require("./jspsych-single-stim-litw-2");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response");
 require("../js/jsPsych-5.0.3/plugins/jspsych-button-response-2");
+
 
 var LITW_STUDY_CONTENT = require("./data");
 
@@ -136,13 +139,6 @@ module.exports = (function() {
 
          stim.withTouch = window.litwWithTouch;
          timeline.push(stim);
-
-         // register a function to submit data as soon
-         // as this trial is completed
-         timeline.push({
-            type: "call-function",
-            func: submitData
-         });
       });
 
       // 3. PRE-TRIAL BREAK
@@ -183,13 +179,6 @@ module.exports = (function() {
 
          stim.withTouch = window.litwWithTouch;
          timeline.push(stim);
-
-         // register a function to submit data as soon
-         // as this trial is completed
-         timeline.push({
-            type: "call-function",
-            func: submitData
-         });
       });
 
       /* PART 2: SEARCHING AND MEMORIZATION TASK STARTS HERE */
@@ -232,13 +221,6 @@ module.exports = (function() {
           });
 
           timeline.push(stim);
-
-          // register a function to submit data as soon
-          // as this trial is completed
-          timeline.push({
-              type: "call-function",
-              func: submitData
-          });
       });
 
       // PRE-TRIAL BREAK
@@ -278,13 +260,6 @@ module.exports = (function() {
           });
 
           timeline.push(stim);
-
-          // register a function to submit data as soon
-          // as this trial is completed
-          timeline.push({
-              type: "call-function",
-              func: submitData
-          });
       });
 */
       /* PART 2b: INTERACTION AND MEMORIZATION TASK STARTS HERE*/
@@ -327,13 +302,6 @@ module.exports = (function() {
 
 
             timeline.push(stim);
-
-            // register a function to submit data as soon
-            // as this trial is completed
-            timeline.push({
-                type: "call-function",
-                func: submitData
-            });
         });
 
         // PRE-TRIAL BREAK
@@ -373,13 +341,6 @@ module.exports = (function() {
             });
 
             timeline.push(stim);
-
-            // register a function to submit data as soon
-            // as this trial is completed
-            timeline.push({
-                type: "call-function",
-                func: submitData
-            });
         });
 
 
@@ -423,6 +384,13 @@ module.exports = (function() {
       studyData4 = jsPsych.data.getTrialsOfType("survey-text"),
       studyData5 = jsPsych.data.getTrialsOfType("button-response-3"),
       loTime = 0, mdTime = 0, hiTime = 0;
+
+      // create objects to store store data
+      var ratingsTask = new Object();
+      var searchTask = new Object();
+      var qaTask = new Object();
+      var memorizationTask = new Object();
+
       // strip out the data generated from the practice trials
       studyData0.splice(0, 1);
       studyData1.splice(0, 1);
@@ -432,16 +400,12 @@ module.exports = (function() {
       studyData5.splice(0, 2);
 
       studyData0.filter(function(item) {
-        if(item.id === "A/lo/0") {
-        } else if(item.id === "A/lo/1") {
-        } else if(item.id === "A/md/0") {
-        } else if(item.id === "A/md/1") {
-        } else if(item.id === "A/hi/0") {
-        } else {
-        }
+        ratingsTask[item.id] = item.button_pressed;
       });
 
       studyData1.filter(function(item) {
+        searchTask[item.id] = {time:item.time, errors:item.wrong};
+
         if(item.id === "B1/lo/0") {
           loTime = loTime + item.time + item.wrong;
         } else if(item.id === "B1/lo/1") {
@@ -457,17 +421,14 @@ module.exports = (function() {
         }
       });
 
+      var fg = false;
       studyData2.filter(function(item) {
-        if(item.id === "B1/lo/0") {
-        } else if(item.id === "B1/lo/1") {
-        } else if(item.id === "B1/md/0") {
-        } else if(item.id === "B1/md/1") {
-        } else if(item.id === "B1/hi/0") {
-        } else {
-        }
+        fg = !fg;
+        memorizationTask[item.id] = {isForeground:fg, response:item.button_pressed};
       });
 
       studyData3.filter(function(item) {
+        //qaTask[item.id] = {time:item.time};
         if(item.id === "B2/lo/0") {
         } else if(item.id === "B2/lo/1") {
         } else if(item.id === "B2/md/0") {
@@ -478,30 +439,28 @@ module.exports = (function() {
       });
 
       studyData4.filter(function(item) {
+        qaTask[item.id] = {test:"no"}; // delet this nephew
+        qaTask[item.id].response = item.responses;
+        //qaTask[item.id].correct = item.correct;
         if(item.id === "B2/lo/0") {
-          loTime = loTime + item.time;
         } else if(item.id === "B2/lo/1") {
-          loTime = loTime + item.time;
         } else if(item.id === "B2/md/0") {
-          mdTime = mdTime + item.time;
         } else if(item.id === "B2/md/1") {
-          mdTime = mdTime + item.time;
         } else if(item.id === "B2/hi/0") {
-          mdTime = mdTime + item.time;
         } else {
-          mdTime = mdTime + item.time;
         }
       });
 
       studyData5.filter(function(item) {
-        if(item.id === "B2/lo/0") {
-        } else if(item.id === "B2/lo/1") {
-        } else if(item.id === "B2/md/0") {
-        } else if(item.id === "B2/md/1") {
-        } else if(item.id === "B2/hi/0") {
-        } else {
-        }
+        fg = !fg;
+        memorizationTask[item.id] = {isForeground:fg, response:item.button_pressed};
       });
+
+      // submit data
+      LITW.data.submitStudyData(ratingsTask);
+      LITW.data.submitStudyData(searchTask);
+      LITW.data.submitStudyData(qaTask);
+      LITW.data.submitStudyData(memorizationTask);
 
       console.log("Calculations");
       console.log(loTime);
