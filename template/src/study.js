@@ -418,26 +418,88 @@ module.exports = (function() {
       // get the trial data from jsPsych
       var studyData0 = jsPsych.data.getTrialsOfType("button-response"),
       studyData1 = jsPsych.data.getTrialsOfType("display-search"),
-      studyData2 = jsPsych.data.getTrialsOfType(""),
-      studyData3 = jsPsych.data.getTrialsOfType(""),
-      studyData4 = jsPsych.data.getTrialsOfType("button-response-2"),
+      studyData2 = jsPsych.data.getTrialsOfType("button-response-2"),
+      studyData3 = jsPsych.data.getTrialsOfType("single-stim-2"),
+      studyData4 = jsPsych.data.getTrialsOfType("survey-text"),
+      studyData5 = jsPsych.data.getTrialsOfType("button-response-3"),
       loTime = 0, mdTime = 0, hiTime = 0;
-
-      console.log(studyData1);
-
-      // strip out the data generated from the practice trial
+      // strip out the data generated from the practice trials
+      studyData0.splice(0, 1);
       studyData1.splice(0, 1);
+      studyData2.splice(0, 2);
+      studyData3.splice(0, 1);
+      studyData4.splice(0, 1);
+      studyData5.splice(0, 2);
 
-      console.log(studyData1);
+      studyData0.filter(function(item) {
+        if(item.id === "A/lo/0") {
+        } else if(item.id === "A/lo/1") {
+        } else if(item.id === "A/md/0") {
+        } else if(item.id === "A/md/1") {
+        } else if(item.id === "A/hi/0") {
+        } else {
+        }
+      });
 
       studyData1.filter(function(item) {
-        console.log(item.complexity);
-        if(item.complexity === "l") {
+        if(item.id === "B1/lo/0") {
           loTime = loTime + item.time + item.wrong;
-        } else if(item.complexity === "m") {
+        } else if(item.id === "B1/lo/1") {
+          loTime = loTime + item.time + item.wrong;
+        } else if(item.id === "B1/md/0") {
           mdTime = mdTime + item.time + item.wrong;
+        } else if(item.id === "B1/md/1") {
+          mdTime = mdTime + item.time + item.wrong;
+        } else if(item.id === "B1/hi/0") {
+          hiTime = hiTime + item.time + item.wrong;
         } else {
           hiTime = hiTime + item.time + item.wrong;
+        }
+      });
+
+      studyData2.filter(function(item) {
+        if(item.id === "B1/lo/0") {
+        } else if(item.id === "B1/lo/1") {
+        } else if(item.id === "B1/md/0") {
+        } else if(item.id === "B1/md/1") {
+        } else if(item.id === "B1/hi/0") {
+        } else {
+        }
+      });
+
+      studyData3.filter(function(item) {
+        if(item.id === "B2/lo/0") {
+        } else if(item.id === "B2/lo/1") {
+        } else if(item.id === "B2/md/0") {
+        } else if(item.id === "B2/md/1") {
+        } else if(item.id === "B2/hi/0") {
+        } else {
+        }
+      });
+
+      studyData4.filter(function(item) {
+        if(item.id === "B2/lo/0") {
+          loTime = loTime + item.time;
+        } else if(item.id === "B2/lo/1") {
+          loTime = loTime + item.time;
+        } else if(item.id === "B2/md/0") {
+          mdTime = mdTime + item.time;
+        } else if(item.id === "B2/md/1") {
+          mdTime = mdTime + item.time;
+        } else if(item.id === "B2/hi/0") {
+          mdTime = mdTime + item.time;
+        } else {
+          mdTime = mdTime + item.time;
+        }
+      });
+
+      studyData5.filter(function(item) {
+        if(item.id === "B2/lo/0") {
+        } else if(item.id === "B2/lo/1") {
+        } else if(item.id === "B2/md/0") {
+        } else if(item.id === "B2/md/1") {
+        } else if(item.id === "B2/hi/0") {
+        } else {
         }
       });
 
