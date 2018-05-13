@@ -37,7 +37,7 @@ function shuffle(a) {
     }
 }
 
-function getAnswer(selection) {
+function getBoundaries(selection) {
   // parse prompt to get
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
@@ -51,7 +51,7 @@ function getAnswer(selection) {
   }
 }
 
-function getBoundaries(selection) {
+function getAnswer(selection) {
   // parse prompt to get
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
