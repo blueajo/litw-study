@@ -48,6 +48,7 @@ module.exports = jsPsych.plugins["display-search"] = (function() {
                 }
 
                 var trial_data = {
+                    "id": trial.id,
                     "wrong": wrongAttempts,
                     "point": point,
                     "time": response_time
