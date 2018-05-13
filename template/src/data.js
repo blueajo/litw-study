@@ -640,14 +640,14 @@ module.exports = {
       "correctAnswer": "80%"
     },
     {
-      "type": "button-response-2",
+      "type": "button-response-3",
       "stimulus": "img/stim-img/B2/trialicon0.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     },
     {
-      "type": "button-response-2",
+      "type": "button-response-3",
       "stimulus": "img/stim-img/B2/trialicon1.png",
       "choices": ["Yes","No","I don't know"],
       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -677,7 +677,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[0])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -685,7 +685,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[0]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[0] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -714,7 +714,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[1])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -722,7 +722,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[1]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[1] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -751,7 +751,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[2])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -759,7 +759,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[2]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[2] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -788,7 +788,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[3])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -796,7 +796,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[3]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[3] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -825,7 +825,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[4])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -833,7 +833,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[4]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[4] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -862,7 +862,7 @@ module.exports = {
        "correctAnswer": getAnswer(partB2imgs[5])
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "icon0.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
@@ -870,7 +870,7 @@ module.exports = {
        "id": "B2/" + partB2imgs[5]
      },
      {
-       "type": "button-response-2",
+       "type": "button-response-3",
        "stimulus": "img/stim-img/B2/" + partB2imgs[5] + "icon1.png",
        "choices": ["Yes","No","I don't know"],
        "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
