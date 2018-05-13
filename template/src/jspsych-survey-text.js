@@ -86,6 +86,7 @@ jsPsych.plugins['survey-text'] = (function() {
       console.log(question_data);
       // save data
       var trialdata = {
+        "id": trial.id,
         "rt": response_time,
         "responses": JSON.stringify(question_data),
         "correct": correct
