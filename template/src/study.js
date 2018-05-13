@@ -105,7 +105,7 @@ module.exports = (function() {
    },
 
    initJsPsych = function() {
-     /*
+
 
       // ******* BEGIN STUDY PROGRESSION ******** //
       // 1. GENERAL INSTRUCTIONS PAGE
@@ -119,7 +119,7 @@ module.exports = (function() {
       // 2. PRACTICE STIMS
       // loop through all practice stims and register
       // them with the jsPsych timeline
-      params.practiceStimsA.forEach(function(stim, index) {
+      params.practiceStimsC.forEach(function(stim, index) {
 
          // record tracking information and update progress counter
          timeline.push({
@@ -128,7 +128,7 @@ module.exports = (function() {
                $("#progress-header").html(progressTemplate({
                   msg: C.progressMsg,
                   progress: Math.ceil((++params.currentProgress)/2),
-                  total: params.practiceStimsA.length/2
+                  total: params.practiceStimsC.length/2
                }))
                .show();
 
@@ -185,7 +185,7 @@ module.exports = (function() {
 
 
       // Part 1: Search and memorization
-/*
+
       // INSTRUCTIONS PAGE
       timeline.push({
          type: "call-function",
@@ -261,7 +261,7 @@ module.exports = (function() {
 
           timeline.push(stim);
       });
-*/
+
       /* PART 2b: INTERACTION AND MEMORIZATION TASK STARTS HERE*/
 
 
@@ -383,7 +383,7 @@ module.exports = (function() {
       studyData3 = jsPsych.data.getTrialsOfType("single-stim-2"),
       studyData4 = jsPsych.data.getTrialsOfType("survey-text"),
       studyData5 = jsPsych.data.getTrialsOfType("button-response-3"),
-      loTime = 0, mdTime = 0, hiTime = 0;
+      loTime = 0.0, mdTime = 0.0, hiTime = 0.0;
 
       // create objects to store store data
       var ratingsTask = new Object();
@@ -405,19 +405,13 @@ module.exports = (function() {
 
       studyData1.filter(function(item) {
         searchTask[item.id] = {time:item.time, errors:item.wrong};
-
-        if(item.id === "B1/lo/0") {
-          loTime = loTime + item.time + item.wrong;
-        } else if(item.id === "B1/lo/1") {
-          loTime = loTime + item.time + item.wrong;
-        } else if(item.id === "B1/md/0") {
-          mdTime = mdTime + item.time + item.wrong;
-        } else if(item.id === "B1/md/1") {
-          mdTime = mdTime + item.time + item.wrong;
-        } else if(item.id === "B1/hi/0") {
-          hiTime = hiTime + item.time + item.wrong;
+        var complexity = item.id.charAt(3);
+        if(complexity === "l") {
+          loTime = loTime + item.time;
+        } else if(complexity === "m") {
+          mdTime = mdTime + item.time;
         } else {
-          hiTime = hiTime + item.time + item.wrong;
+          hiTime = hiTime + item.time;
         }
       });
 
@@ -429,27 +423,53 @@ module.exports = (function() {
 
       studyData3.filter(function(item) {
         //qaTask[item.id] = {time:item.time};
-        if(item.id === "B2/lo/0") {
-        } else if(item.id === "B2/lo/1") {
-        } else if(item.id === "B2/md/0") {
-        } else if(item.id === "B2/md/1") {
-        } else if(item.id === "B2/hi/0") {
+        var complexity = item.id.charAt(3);
+        if(complexity === "l") {
+          loTime = loTime + item.time;
+        } else if(complexity === "m") {
+          mdTime = mdTime + item.time;
         } else {
+          hiTime = hiTime + item.time;
         }
       });
 
+      loTime = loTime/4.0;
+      mdTime = mdTime/4.0;
+      hiTime = hiTime/4.0;
+
       studyData4.filter(function(item) {
-        qaTask[item.id] = {test:"no"}; // delet this nephew
         qaTask[item.id].response = item.responses;
         //qaTask[item.id].correct = item.correct;
-        if(item.id === "B2/lo/0") {
-        } else if(item.id === "B2/lo/1") {
-        } else if(item.id === "B2/md/0") {
-        } else if(item.id === "B2/md/1") {
-        } else if(item.id === "B2/hi/0") {
-        } else {
+        var complexity = item.id.charAt(3);
+        if(item.correct === false) {
+          if(complexity === "l") {
+            loTime = loTime + 1;
+          } else if(complexity === "m") {
+            mdTime = mdTime + 1;
+          } else {
+            hiTime = hiTime + 1;
+          }
         }
       });
+
+      // get averages ( and update them? )
+      var avgLo = 3;
+      var avgMd = 5;
+      var avgHi = 7;
+      var avgTotal = 5;
+
+      var loRatio = avgLo/loTime;
+      var mdRatio = avgMd/mdTime;
+      var hiRatio = avgHi/hiTime;
+      var loBest = false;
+      var mdBest = false;
+      if ((loRatio < mdRatio) && (loRatio < mdRatio)) {
+        loBest = true;
+      } else if ((mdRatio < loRatio) && (loRatio < mdRatio)) {
+        mdBest = true;
+      }
+
+      totalTime = (hiTime + mdTime + loTime)/3.0;
 
       studyData5.filter(function(item) {
         fg = !fg;
@@ -472,8 +492,16 @@ module.exports = (function() {
          content: C.results,
          resultsExplanation: C.resultsExplanation,
          citations: C.citations,
-         whichCat: false,
-         bothCats: false
+         avgTotal: avgTotal,
+         avgLoTime: avgLo,
+         avgMdTime: avgMd,
+         avgHiTime: avgHi,
+         totalTime: totalTime,
+         loTime: loTime,
+         mdTime: mdTime,
+         hiTime: hiTime,
+         loBest: loBest,
+         mdBest: mdBest
       }));
 
       LITW.results.insertFooter();

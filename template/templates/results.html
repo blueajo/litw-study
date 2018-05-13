@@ -19,10 +19,12 @@
 
 <!-- Template for the results page -->
 
-{{#if bothCats}}
-	<h2 class="bolded-blue">You are an advanced internet user!</h2>
+{{#if loBest}}
+	<h2 class="bolded-blue">Relative to others, you perform best on websites with low visual complexity!</h2>
+{{else if mdBest}}
+	<h2 class="bolded-blue">Relative to others, you perform best on websites with medium visual complexity!</h2>
 {{else}}
-	<h2 class="bolded-blue">Here are your results!</h2>
+  <h2 class="bolded-blue">Relative to others, you perform best on websites with high visual complexity!</h2>
 {{/if}}
 
 <div class="results-explanation">
@@ -51,17 +53,17 @@
 
 function setvalues(d) {
 	if(d.title == "Overall") {
-		d.ranges = [4];
-	  d.measures = [2];
+		d.ranges = [avgTotal];
+	  d.measures = [totalTime];
 	} else if(d.title == "Low Complexity Websites") {
-		d.ranges = [4];
-		d.measures = [1];
+		d.ranges = [avgLo];
+		d.measures = [loTime];
 	} else if(d.title == "Medium Complexity Websites") {
-		d.ranges = [5];
-		d.measures = [5];
+		d.ranges = [avgMd];
+		d.measures = [mdTime];
 	} else {
-		d.ranges = [6];
-		d.measures = [7];
+		d.ranges = [avgHi];
+		d.measures = [hiTime];
 	}
   return d;
 }
