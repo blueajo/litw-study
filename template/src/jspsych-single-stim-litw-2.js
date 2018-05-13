@@ -16,7 +16,7 @@ jsPsych.plugins["single-stim-2"] = (function() {
   jsPsych.pluginAPI.registerPreload('single-stim', 'stimulus', 'image');
 
   plugin.trial = function(display_element, trial) {
-
+    var startTime = Date.now();
     // if any trial variables are functions
     // this evaluates the function and replaces
     // it with the output of the function
@@ -60,7 +60,7 @@ jsPsych.plugins["single-stim-2"] = (function() {
 
     // function to end trial when it is time
     var end_trial = function() {
-
+      var responseTime = (Date.now() - startTime) / 1000;
       // kill any remaining setTimeout handlers
       for (var i = 0; i < setTimeoutHandlers.length; i++) {
         clearTimeout(setTimeoutHandlers[i]);
@@ -75,7 +75,8 @@ jsPsych.plugins["single-stim-2"] = (function() {
       var trial_data = {
         "rt": response.rt,
         "stimulus": trial.stimulus,
-        "key_press": response.key
+        "key_press": response.key,
+        "time": responseTime
       };
 
       //jsPsych.data.write(trial_data);
