@@ -37,7 +37,7 @@ function shuffle(a) {
     }
 }
 
-function getBoundaries(selection) {
+function getAnswer(selection) {
   // parse prompt to get
   var complexity = selection.charAt(0);
   var idx = parseInt(selection.charAt(3));
@@ -48,6 +48,20 @@ function getBoundaries(selection) {
     return mdBoundaries[idx];
   } else {
     return hiBoundaries[idx];
+  }
+}
+
+function getBoundaries(selection) {
+  // parse prompt to get
+  var complexity = selection.charAt(0);
+  var idx = parseInt(selection.charAt(3));
+
+  if(complexity == "l") {
+    return loAnswers[idx];
+  } else if (complexity == "m") {
+    return mdAnswers[idx];
+  } else {
+    return hiAnswers[idx];
   }
 }
 
@@ -94,12 +108,17 @@ var mdPromptsB1 = [{prompt: "The next website is the front page of a PC technica
 var hiPromptsB1 = [{prompt: "The next website hosts online quizzes. You want to learn which college major fits you best.", task: "Click on the College Major Selector Quiz."},
                    {prompt: "The next website is a social entertainment home page. You are looking for a new ringtones.", task: "Click on the image that will take redirect you to find new ringtones."}];
 
-var loPromptsB2 = [{prompt: "The next website is the personal website of a software developer.", task: "What is the name of the software developer?"},
-                   {prompt: "The next website is a website for a winery.", task: "Where is the winery located?"}];
-var mdPromptsB2 = [{prompt: "The next website is a hub for downloading free software.", task: "Which version of Internet Explorer is offered for download?"},
+var loPromptsB2 = [{prompt: "The next website is the personal website of a software developer.", task: "What is the last name of the software developer?"},
+                   {prompt: "The next website is a website for a winery.", task: "Where country is the winery located in?"}];
+var mdPromptsB2 = [{prompt: "The next website is a hub for downloading free software.", task: "Which version number of Internet Explorer is offered for download?"},
                    {prompt: "The next website is the front page of a quiz website.", task: "What is the name of this week's word search?"}];
-var hiPromptsB2 = [{prompt: "The next website is the front page of a local news site.", task: "What day are the most recent articles from?"},
-                   {prompt: "The next website is the front page of a local news site.", task: "Who is the Berkeley Chancellor as reported on the news site?"}];
+var hiPromptsB2 = [{prompt: "The next website is the front page of a local news site.", task: "What month are the most recent articles from?"},
+                   {prompt: "The next website is the front page of a local news site.", task: "What is the Berkeley Chancellor's first name as reported on the news site?"}];
+
+
+var loAnswers = ["Anka", "New Zealand"];
+var mdAnswers = ["Internet Explorer 9", "Melodous Monks"];
+var hiAnswers = ["August", "Robert"];
 
 
 var loBoundaries = [[372, 383, 211, 264],
@@ -618,6 +637,7 @@ module.exports = {
     {
       "type": 'survey-text',
       "questions": ["Up to what percent can you save on prescription drugs using this site?<br>Leave the answer blank if you don't know or forgot."],
+      "correctAnswer": "80%"
     },
     {
       "type": "button-response-2",
@@ -653,7 +673,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[0], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[0]
+       "id": "B2/" + partB2imgs[0],
+       "correctAnswer": getAnswer(partB2imgs[0])
      },
      {
        "type": "button-response-2",
@@ -689,7 +710,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[1], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[1]
+       "id": "B2/" + partB2imgs[1],
+       "correctAnswer": getAnswer(partB2imgs[1])
      },
      {
        "type": "button-response-2",
@@ -725,7 +747,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[2], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[2]
+       "id": "B2/" + partB2imgs[2],
+       "correctAnswer": getAnswer(partB2imgs[2])
      },
      {
        "type": "button-response-2",
@@ -761,7 +784,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[3], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[3]
+       "id": "B2/" + partB2imgs[3],
+       "correctAnswer": getAnswer(partB2imgs[3])
      },
      {
        "type": "button-response-2",
@@ -797,7 +821,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[4], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[4]
+       "id": "B2/" + partB2imgs[4],
+       "correctAnswer": getAnswer(partB2imgs[4])
      },
      {
        "type": "button-response-2",
@@ -833,7 +858,8 @@ module.exports = {
      {
        "type": 'survey-text',
        "questions": [getPrompt(partB2imgs[5], "B2", "part") + "<br>Leave the answer blank if you don't know or forgot."],
-       "id": "B2/" + partB2imgs[5]
+       "id": "B2/" + partB2imgs[5],
+       "correctAnswer": getAnswer(partB2imgs[5])
      },
      {
        "type": "button-response-2",
