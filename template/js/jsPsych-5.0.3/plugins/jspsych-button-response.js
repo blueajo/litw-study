@@ -117,6 +117,7 @@ jsPsych.plugins["button-response"] = (function() {
 
       // gather the data to store for the trial
       var trial_data = {
+        "id": trial.id,
         "rt": response.rt,
         "stimulus": trial.stimulus,
         "button_pressed": response.button
