@@ -117,7 +117,7 @@ var hiPromptsB2 = [{prompt: "The next website is the front page of a local news 
 
 
 var loAnswers = ["Anka", "New Zealand"];
-var mdAnswers = ["Internet Explorer 9", "Melodous Monks"];
+var mdAnswers = ["Internet Explorer 9", "Melodious Monks"];
 var hiAnswers = ["August", "Robert"];
 
 
