@@ -14,7 +14,8 @@ jsPsych.plugins['survey-text'] = (function() {
   var plugin = {};
 
   plugin.trial = function(display_element, trial) {
-
+    var correctAnswer = trial.correctAnswer;
+    var correct = -1;
     trial.preamble = typeof trial.preamble == 'undefined' ? "" : trial.preamble;
     if (typeof trial.rows == 'undefined') {
       trial.rows = [];
@@ -73,15 +74,21 @@ jsPsych.plugins['survey-text'] = (function() {
       $("div.jspsych-survey-text-question").each(function(index) {
         var id = "Q" + index;
         var val = $(this).children('textarea').val();
+        if (correctAnswer.toUpperCase().includes(val.toUpperCase()) || val.toUpperCase().includes(correctAnswer.toUpperCase())) {
+          correct = 0;
+        } else {
+          correct = 1;
+        }
         var obje = {};
         obje[id] = val;
         $.extend(question_data, obje);
       });
-
+      console.log(question_data);
       // save data
       var trialdata = {
         "rt": response_time,
-        "responses": JSON.stringify(question_data)
+        "responses": JSON.stringify(question_data),
+        "correct": correct
       };
 
       display_element.html('');
