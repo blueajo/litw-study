@@ -438,16 +438,15 @@ module.exports = (function() {
       hiTime = hiTime/4.0;
 
       studyData4.filter(function(item) {
-        qaTask[item.id].response = item.responses;
-        //qaTask[item.id].correct = item.correct;
+        qaTask[item.id] = {response:item.responses, correct:item.correct};
         var complexity = item.id.charAt(3);
         if(item.correct === false) {
           if(complexity === "l") {
-            loTime = loTime + 1;
+            loTime = loTime + 0.5;
           } else if(complexity === "m") {
-            mdTime = mdTime + 1;
+            mdTime = mdTime + 0.5;
           } else {
-            hiTime = hiTime + 1;
+            hiTime = hiTime + 0.5;
           }
         }
       });
@@ -463,9 +462,9 @@ module.exports = (function() {
       var hiRatio = avgHi/hiTime;
       var loBest = false;
       var mdBest = false;
-      if ((loRatio < mdRatio) && (loRatio < mdRatio)) {
+      if ((loRatio > mdRatio) && (loRatio > hiRatio)) {
         loBest = true;
-      } else if ((mdRatio < loRatio) && (loRatio < mdRatio)) {
+      } else if ((mdRatio > loRatio) && (mdRatio > hiRatio)) {
         mdBest = true;
       }
 
@@ -493,9 +492,9 @@ module.exports = (function() {
          resultsExplanation: C.resultsExplanation,
          citations: C.citations,
          avgTotal: avgTotal,
-         avgLoTime: avgLo,
-         avgMdTime: avgMd,
-         avgHiTime: avgHi,
+         avgLo: avgLo,
+         avgMd: avgMd,
+         avgHi: avgHi,
          totalTime: totalTime,
          loTime: loTime,
          mdTime: mdTime,

@@ -884,7 +884,7 @@ module.exports = {
       "header": "Have a look at your results!",
       "predictionMsg1": ""
    },
-   "resultsExplanation": ["We calculated your web performance score based on how long it took you to complete the tasks given to you in the task-completion part of the experiment. Your performance compared to the average performance for all participants is shown in the graphs below.", "Note that we do not do many search tasks per participant. As a result, don’t worry if your results are below what you expected - they might have just been skewed due to small sample size."],
+   "resultsExplanation": ["We calculated the average time it took you to complete the tasks given to you. If you entered an answer incorrectly in the last part of the experiment, 0.5 seconds was added to your average. Your performance compared to the average performance of all participants is shown in the charts below.", "Note that we do not do many search tasks per participant. As a result, don’t worry if your results are below what you expected - they might have just been skewed due to small sample size."],
    "citations": ["If your performance varied across websites of different complexities, it might be because you are a holistic or analytic thinker! People from eastern, holistic-thinking cultures tend to prefer higher visual complexity than those from western, analytic-thinking cultures, who prefer visually simpler websites [1].", "While performance on websites of varying complexities has not been directly linked to holistic and analytic thinking styles, we hypothesize that they are linked.", "[1] Reinecke, K., Gajos, K.Z. (2014). Quantifying visual preferences around the world. CHI 2014."]
 };
 

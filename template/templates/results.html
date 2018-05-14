@@ -12,7 +12,7 @@
 .key-color { display: inline-block; width: 20px; height: 20px; vertical-align: middle; margin-right: 10px; }
 .key-text { display: inline-block; vertical-align: middle; margin: 0; margin-right: 15px; height: 20px; font-size: 14px; font-weight: bold; }
 #key { display: block; }
-.key-container { margin: 5px; }
+.key-container { margin: 5px; display: inline-block; }
 </style>
 <script src="/templates/d3.v3.min.js"></script>
 <script src="/templates/bullet.js"></script>
@@ -33,12 +33,13 @@
 	{{/each}}
 </div>
 
-<div id="key">
+<h4 class="bolded-blue" style="margin-top: 40px;">Your Full Results (average time to complete tasks):</h4>
+<div id="key" style="margin-bottom: 15px;">
 	<div class="key-container">
-		<div class="key-color" style="background-color: lightsteelblue;"></div><p class="key-text">Your results</p>
+		<div class="key-color" style="background-color: lightsteelblue;"></div><p class="key-text">You</p>
 	</div>
 	<div class="key-container">
-		<div class="key-color" style="background-color: #eee;"></div><p class="key-text">Average results for all participants</p>
+		<div class="key-color" style="background-color: #eee;"></div><p class="key-text">All participants</p>
 	</div>
 </div>
 <div id="viz" style="overflow: scroll;"></div>
@@ -49,22 +50,31 @@
 	{{/each}}
 </div>
 
+<span id="avgTotal" style="display: none;">{{avgTotal}}</span>
+<span id="totalTime" style="display: none;">{{totalTime}}</span>
+<span id="avgLo" style="display: none;">{{avgLo}}</span>
+<span id="loTime" style="display: none;">{{loTime}}</span>
+<span id="avgMd" style="display: none;">{{avgMd}}</span>
+<span id="mdTime" style="display: none;">{{mdTime}}</span>
+<span id="avgHi" style="display: none;">{{avgHi}}</span>
+<span id="hiTime" style="display: none;">{{hiTime}}</span>
 <script>
 
 function setvalues(d) {
-	if(d.title == "Overall") {
-		d.ranges = [avgTotal];
-	  d.measures = [totalTime];
-	} else if(d.title == "Low Complexity Websites") {
-		d.ranges = [avgLo];
-		d.measures = [loTime];
-	} else if(d.title == "Medium Complexity Websites") {
-		d.ranges = [avgMd];
-		d.measures = [mdTime];
+	if(d.title == "On All Websites") {
+		d.ranges = [parseFloat(document.getElementById("totalTime").innerHTML)];
+	  d.measures = [parseFloat(document.getElementById("avgTotal").innerHTML)];
+	} else if(d.title == "On Low Complexity Websites") {
+		d.ranges = [parseFloat(document.getElementById("loTime").innerHTML)];
+		d.measures = [parseFloat(document.getElementById("avgLo").innerHTML)];
+	} else if(d.title == "On Med Complexity Websites") {
+		d.ranges = [parseFloat(document.getElementById("mdTime").innerHTML)];
+		d.measures = [parseFloat(document.getElementById("avgMd").innerHTML)];
 	} else {
-		d.ranges = [avgHi];
-		d.measures = [hiTime];
+		d.ranges = [parseFloat(document.getElementById("hiTime").innerHTML)];
+		d.measures = [parseFloat(document.getElementById("avgHi").innerHTML)];
 	}
+	d.markers = [0, Math.ceil(Math.max(d.ranges, d.measures, 10.0))];
   return d;
 }
 

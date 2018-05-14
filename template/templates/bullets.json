@@ -1,6 +1,6 @@
 [
-  {"title":"Overall","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
-  {"title":"Low Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
-  {"title":"Medium Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
-  {"title":"High Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]}
+  {"title":"On All Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
+  {"title":"On Low Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
+  {"title":"On Med Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]},
+  {"title":"On High Complexity Websites","subtitle":"In seconds","ranges":[0],"measures":[0],"markers":[0, 10]}
 ]
