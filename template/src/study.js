@@ -211,8 +211,8 @@ module.exports = (function() {
               func: function() {
                   $("#progress-header").html(progressTemplate({
                       msg: C.progressMsg,
-                      progress: Math.ceil((++params.currentProgress)/4),
-                      total: params.practiceStimsB1.length/4
+                      progress: Math.ceil((++params.currentProgress)/2),
+                      total: params.practiceStimsB1.length/2
                   }))
                       .show();
 
@@ -250,8 +250,8 @@ module.exports = (function() {
               func: function() {
                   $("#progress-header").html(progressTemplate({
                       msg: C.progressMsg,
-                      progress: Math.ceil((++params.currentProgress)/4),
-                      total: params.stimB1.length/4
+                      progress: Math.ceil((++params.currentProgress)/2),
+                      total: params.stimB1.length/2
                   }))
                       .show();
 
@@ -379,7 +379,6 @@ module.exports = (function() {
       // get the trial data from jsPsych
       var studyData0 = jsPsych.data.getTrialsOfType("button-response"),
       studyData1 = jsPsych.data.getTrialsOfType("display-search"),
-      studyData2 = jsPsych.data.getTrialsOfType("button-response-2"),
       studyData3 = jsPsych.data.getTrialsOfType("single-stim-2"),
       studyData4 = jsPsych.data.getTrialsOfType("survey-text"),
       studyData5 = jsPsych.data.getTrialsOfType("button-response-3"),
@@ -388,13 +387,11 @@ module.exports = (function() {
       // create objects to store store data
       var ratingsTask = new Object();
       var searchTask = new Object();
-      var qaTask = new Object();
       var memorizationTask = new Object();
 
       // strip out the data generated from the practice trials
       studyData0.splice(0, 1);
       studyData1.splice(0, 1);
-      studyData2.splice(0, 2);
       studyData3.splice(0, 1);
       studyData4.splice(0, 1);
       studyData5.splice(0, 2);
@@ -415,12 +412,6 @@ module.exports = (function() {
         }
       });
 
-      var fg = false;
-      studyData2.filter(function(item) {
-        fg = !fg;
-        memorizationTask[item.id] = {isForeground:fg, response:item.button_pressed};
-      });
-
       studyData3.filter(function(item) {
         //qaTask[item.id] = {time:item.time};
         var complexity = item.id.charAt(3);
@@ -438,7 +429,6 @@ module.exports = (function() {
       hiTime = hiTime/4.0;
 
       studyData4.filter(function(item) {
-        qaTask[item.id] = {response:item.responses, correct:item.correct};
         var complexity = item.id.charAt(3);
         if(item.correct === false) {
           if(complexity === "l") {
@@ -478,7 +468,6 @@ module.exports = (function() {
       // submit data
       LITW.data.submitStudyData(ratingsTask);
       LITW.data.submitStudyData(searchTask);
-      LITW.data.submitStudyData(qaTask);
       LITW.data.submitStudyData(memorizationTask);
 
       console.log("Calculations");

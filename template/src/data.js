@@ -406,20 +406,6 @@ module.exports = {
       "img": "img/stim-img/B1/trialimg.png",
       "prompt": "Click on the Beach Travel Guide.",
       "boundaries": [226, 285, 509, 777]
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/trialicon0.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/trialicon1.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     }
    ],
    "trialTasksB1": [
@@ -440,22 +426,6 @@ module.exports = {
         "boundaries": getBoundaries(partB1imgs[0]),
         "id": "B1/" + partB1imgs[0]
      },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[0] + "icon0.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-        "id": "B1/" + partB1imgs[0]
-     },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[0] + "icon1.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-       "id": "B1/" + partB1imgs[0]
-     },
      // 2
      {
         "type": "single-stim",
@@ -472,22 +442,6 @@ module.exports = {
         "prompt": getPrompt(partB1imgs[1], "B1", "part"),
         "boundaries": getBoundaries(partB1imgs[1]),
         "id": "B1/" + partB1imgs[1]
-     },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[1] + "icon0.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-       "id": "B1/" + partB1imgs[1]
-     },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[1] + "icon1.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-       "id": "B1/" + partB1imgs[1]
      },
      // 3
      {
@@ -506,22 +460,6 @@ module.exports = {
         "boundaries": getBoundaries(partB1imgs[2]),
         "id": "B1/" + partB1imgs[2]
      },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[2] + "icon0.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-       "id": "B1/" + partB1imgs[2]
-     },
-     {
-       "type": "button-response-2",
-       "stimulus": "img/stim-img/B1/" + partB1imgs[2] + "icon1.png",
-       "choices": ["Yes","No","I don't know"],
-       "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-       "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-       "id": "B1/" + partB1imgs[2]
-     },
      // 4
     {
        "type": "single-stim",
@@ -538,22 +476,6 @@ module.exports = {
         "prompt": getPrompt(partB1imgs[3], "B1", "part"),
         "boundaries": getBoundaries(partB1imgs[3]),
         "id": "B1/" + partB1imgs[3]
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[3] + "icon0.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-      "id": "B1/" + partB1imgs[3]
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[3] + "icon1.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-      "id": "B1/" + partB1imgs[3]
     },
     // 5
     {
@@ -572,22 +494,6 @@ module.exports = {
         "boundaries": getBoundaries(partB1imgs[4]),
         "id": "B1/" + partB1imgs[4]
     },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[4] + "icon0.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-      "id": "B1/" + partB1imgs[4]
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[4] + "icon1.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>",
-      "id": "B1/" + partB1imgs[4]
-    },
     // 6
     {
        "type": "single-stim",
@@ -604,20 +510,6 @@ module.exports = {
        "prompt": getPrompt(partB1imgs[5], "B1", "part"),
         "boundaries": getBoundaries(partB1imgs[5]),
         "id": "B1/" + partB1imgs[5]
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[5] + "icon0.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
-    },
-    {
-      "type": "button-response-2",
-      "stimulus": "img/stim-img/B1/" + partB1imgs[5] + "icon1.png",
-      "choices": ["Yes","No","I don't know"],
-      "button_html":["<button class='jspsych-btn'>Yes</button>","<button class='jspsych-btn'>No</button>","<button class='jspsych-btn'>I don't know</button>"],
-      "prompt": "<p>Do you remember this image from the previous website screenshot?</p><p>Your response will not impact your web browsing proficiency score.</p>"
     }
    ],
    "practiceTaskB2": [
